@@ -1,1 +1,10 @@
+# Environments
 .venv
+.env
+.env/
+venv/
+
+# Visual Studio Code
+.vscode/*
+
+
