@@ -14,3 +14,4 @@ class SquadClient:
 
         self.secret_key = secret_key
         self.base_url = base_url
+        print(secret_key,base_url)
