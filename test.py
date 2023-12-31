@@ -10,5 +10,5 @@ transaction_data = {
     "currency": "USD",
 }
 #print(a.payments.initiate_transaction(transaction_data))
-#txn_ref =  "SQDEBU6383961457377100021"
-#print(a.payments.verify_transaction(txn_ref))
+txn_ref =  "SQDEBU6383961457377100021"
+print(a.payments.verify_transaction(txn_ref))
