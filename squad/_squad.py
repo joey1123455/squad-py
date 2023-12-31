@@ -2,7 +2,7 @@ import json
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-from squad.utils.exceptions import SquadError
+from squad.utils.exceptions import SquadError,InvalidSecretKey
 from squad.utils.types import JSONDict
 from squad.utils.logging import get_logger
 
@@ -25,13 +25,14 @@ class SquadClient(SquadState):
         SquadState.__init__(self)
         secret_key = kwargs.get("secret_key")
         if not hasattr(self, 'requests'):
-            req = SquadRequest(headers = {"Authorization": f"Bearer {secret_key}"})
+            req = SquadRequest(headers={"Authorization": f"Bearer {secret_key}"}, test=kwargs.get("test"))
             self._shared_state.update(requests=req)
 
 
 class SquadRequest(object):
-    def __init__(self, headers=None):
-        self._API_BASE_URL = "https://sandbox-api-d.squadco.com"
+    def __init__(self, headers=None,test=True):
+        self.test = test
+        self._API_BASE_URL = "https://sandbox-api-d.squadco.com" if test else "https://api-d.squadco.com"
         self.headers = headers
         self.request_timeout = 120
         self.session = requests.Session()
@@ -64,9 +65,14 @@ class SquadRequest(object):
                 response = self.session.post(url, headers=headers, json=request_data)
             response.raise_for_status()
             return response.content
+        
+        except requests.exceptions.HTTPError as err:
+            if err.response.status_code == 403:
+                raise InvalidSecretKey(f"Invalid secret_key for {'test' if self.test else 'live'} mode")
+            else:
+                raise err
         except requests.exceptions.RequestException as e:
-            print(f"Error during request: {e}")
-            raise
+            raise e
 
     @staticmethod
     def parse_json_payload(payload: bytes) -> JSONDict:
