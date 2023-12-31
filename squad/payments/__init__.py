@@ -30,3 +30,36 @@ class PaymentTransaction(SquadClient):
         - JSONDict: The response data from the Squad API.
         """
         return cls().requests._send_request("/transaction/initiate","post",data=payment_data)
+
+    @classmethod
+    def charge_card(cls, payment_data: dict):
+        """
+        Charge Card.
+        This allows you charge a card using the token generated during the initial transaction which was sent via webhook
+
+        Parameters:
+          - `payment_data` (dict): A dictionary containing payment information.
+              Required fields:
+                - `amount` (int): Recipient's email address.
+                - `token_id` (str): A unique tokenization code for each card transaction and it is returned via the webhook for first charge on the card.
+              Optional fields:
+                - `transaction_ref` (str): Unique case-sensitive transaction reference. If you do not pass this parameter, Squad will generate a unique reference for you.
+
+        Returns:
+        - JSONDict: The response data from the Squad API.
+        """
+        return cls().requests._send_request("/transaction/charge_card","post",data=payment_data)
+    
+    @classmethod
+    def verify_transaction(cls, transaction_ref: str):
+        """
+        Verify Transaction.
+        This is an endpoint that allows you to query the status of a particular transaction using the unique transaction reference attached to the transaction.
+        Parameters:
+          Required fields:
+            - `transaction_ref` (str): Unique transaction reference that identifies each transaction
+              
+        Returns:
+        - JSONDict: The response data from the Squad API.
+        """
+        return cls().requests._send_request(f"/transaction/verify/{transaction_ref}","get")
