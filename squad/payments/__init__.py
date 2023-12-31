@@ -24,6 +24,8 @@ class PaymentTransaction(SquadClient):
                 - `pass_charge` (bool): the charges is being paid by the customer (default is False).
                 - `sub_merchant_id` (str): This is the ID of a merchant that was created by an aggregator which allows the aggregator initiate a transaction on behalf of the submerchant.
 
+                - `is_recurring` (bool): This allows you charge a card without collecting the card information each time
+
         Returns:
         - JSONDict: The response data from the Squad API.
         """
