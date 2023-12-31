@@ -2,7 +2,7 @@ import json
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-from squad.utils.exceptions import InvalidSecretKey, SquadError
+from squad.utils.exceptions import SquadError
 from squad.utils.types import JSONDict
 from squad.utils.logging import get_logger
 
