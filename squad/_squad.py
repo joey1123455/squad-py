@@ -1,54 +1,72 @@
 import json
-import httpx
-from abc import abstractmethod
-from squad.utils.exceptions import InvalidSecretKey,SquadError
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
+from squad.utils.exceptions import InvalidSecretKey, SquadError
 from squad.utils.types import JSONDict
 from squad.utils.logging import get_logger
 
 _LOGGER = get_logger(__name__, class_name="SquadRequest")
 
 
-class SquadClient:
+class SquadState:
+    """making class attributes global"""
+
+    _shared_state = {}
+
+    def __init__(self):
+        self.__dict__ = self._shared_state
+
+
+class SquadClient(SquadState):
     """represents a client for interacting with the Squad API"""
 
-    def __init__(
-        self,
-        secret_key: str,
-        base_url: str = "https://sandbox-api-d.squadco.com",
-    ):
-        if not secret_key:
-            raise InvalidSecretKey("you must pass an authorization key (secret key)")
+    def __init__(self, **kwargs):
+        SquadState.__init__(self)
+        secret_key = kwargs.get("secret_key")
+        if not hasattr(self, 'requests'):
+            req = SquadRequest(headers = {"Authorization": f"Bearer {secret_key}"})
+            self._shared_state.update(requests=req)
 
-        self.secret_key = secret_key
-        self.base_url = base_url
 
-    async def _send_request(self, endpoint: str, method="get", params=None):
+class SquadRequest(object):
+    def __init__(self, headers=None):
+        self._API_BASE_URL = "https://sandbox-api-d.squadco.com"
+        self.headers = headers
+        self.request_timeout = 120
+        self.session = requests.Session()
+        retries = Retry(
+            total=4,
+            status_forcelist=[429, 500, 502, 503, 504],
+        )
+        self.session.mount("https://", HTTPAdapter(max_retries=retries))
+
+    def _send_request(self, endpoint: str, method="get", **kwargs):
         """
         The function sends a request to an endpoint.
         """
-        url = f"{self.base_url}/{endpoint}"
-        headers = {"Authorization": f"Bearer {self.secret_key}"}
+        data = kwargs.get("data")
 
-        payload = await self._request_wrapper(
-            url=url,
+        payload = self._request_wrapper(
+            url=self._API_BASE_URL + endpoint,
             method=method,
-            request_data=params,
-            headers=headers
-
+            request_data=data,
+            headers=self.headers,
         )
         response_data = self.parse_json_payload(payload)
         return response_data
 
-    @abstractmethod
-    async def _request_wrapper(self, url, method, request_data, headers):
-        async with httpx.AsyncClient() as client:
+    def _request_wrapper(self, url, method, headers, request_data=None):
+        try:
             if method.lower() == "get":
-                response = await client.get(url, json=request_data, headers=headers)
+                response = self.session.get(url, headers=headers, params=request_data)
             elif method.lower() == "post":
-                response = await client.post(url, json=request_data, headers=headers)
-
+                response = self.session.post(url, headers=headers, json=request_data)
             response.raise_for_status()
-            return response.text
+            return response.content
+        except requests.exceptions.RequestException as e:
+            print(f"Error during request: {e}")
+            raise
 
     @staticmethod
     def parse_json_payload(payload: bytes) -> JSONDict:
