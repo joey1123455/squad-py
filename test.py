@@ -24,23 +24,30 @@ business = {
         "customer_identifier": "CCC",
         "business_name": "Techzilla-Joseph Okoye",
         "mobile_num": "08139011943",
-        "bvn": "12343211654",
+        "bvn": config["BVN"],
         "beneficiary_account": "4920299492"
     }
 
 
-Customer ={
-        "customer_identifier": "CCC",
-        "first_name": "Techzilla- Joesph",
-        "last_name": "Okoye",
-        "mobile_num": "08139011943",
-        "email": "ayo@gmail.com",
-        "bvn": "12343211654",
-        "dob": "30/10/1990",
-        "address": "22 Kota street, UK",
-        "gender": "1",
-        "beneficiary_account": "4920299492"
-    }
-b = a.virtual_accounts.create_business_virtual_account(business)
-c = a.virtual_accounts.create_customer_virtual_account(Customer)
-print(b,c)
+Customer =  {
+    "customer_identifier": "CCC",
+    "first_name": "BusinessName-Joesph",
+    "last_name": "Ayodele",
+    "mobile_num": "08139011943",
+    "email": "ayo@gmail.com",
+    "bvn": config["BVN"],
+    "dob": "30/10/1990",
+    "address": "22 Kota street, UK",
+    "gender": "1",
+    "beneficiary_account": "4920299492"
+}
+#b = a.virtual_accounts.create_business_virtual_account(business)
+#b = a.virtual_accounts.create_customer_virtual_account(Customer)
+filter = {
+    "transactionReference": "REFQVFJWNB75/1704003205952_1"
+
+}
+#b = a.virtual_accounts.filter_merchant_transaction(filter)
+#b = a.virtual_accounts.get_customer_by_virtual_account_number('3456987768')
+#b = a.virtual_accounts.get_customer_using_customer_identifier("hex11rthyuirjahdu")
+print(b)

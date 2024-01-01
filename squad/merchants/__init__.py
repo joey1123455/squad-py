@@ -27,3 +27,4 @@ class SquadMerchant(SquadClient):
                 - JSONDict: The response data from the Squad API.
         """
         return cls().requests._send_request("/merchant/create-sub-users","post",data=merchant_data)
+    
