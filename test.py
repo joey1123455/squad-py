@@ -42,5 +42,12 @@ Customer =  {
     "beneficiary_account": "4920299492"
 }
 #b = a.virtual_accounts.create_business_virtual_account(business)
-b = a.virtual_accounts.create_customer_virtual_account(Customer)
+#b = a.virtual_accounts.create_customer_virtual_account(Customer)
+filter = {
+    "transactionReference": "REFQVFJWNB75/1704003205952_1"
+
+}
+#b = a.virtual_accounts.filter_merchant_transaction(filter)
+#b = a.virtual_accounts.get_customer_by_virtual_account_number('3456987768')
+#b = a.virtual_accounts.get_customer_using_customer_identifier("hex11rthyuirjahdu")
 print(b)
