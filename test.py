@@ -87,6 +87,7 @@ dic = {
     "redirect_link": "https://fjfhgfd.com",
     "return_msg": "Successful"
 }
-b = a.payments.generate_payment_link(dic)
+#b = a.payments.generate_payment_link(dic)
+b = a.dispute.get_dispute()
 print(b)
 
