@@ -72,7 +72,27 @@ simulate =  {
 #b = a.virtual_accounts.get_webhook_error_logs()
 #b = a.virtual_accounts.query_customer_transaction_by_customer_identifier("CCC")
 #print(b)
-
-
-# print(b)
+dic = {
+    "name": "Demo Otp Link",
+    "hash": "paybydebug",
+    "link_status": 1,
+    "expire_by": "2024-04-26T11:22:08.587Z",
+    "amounts": [
+        {
+            "amount": 4000,
+            "currency_id": "NGN"
+        }
+    ],
+    "description": "My description",
+    "redirect_link": "https://fjfhgfd.com",
+    "return_msg": "Successful"
+}
+#b = a.payments.generate_payment_link(dic)
+#b = a.wallet.balance()
+di = {
+    "bank_code":"000013",
+    "account_number":"0123456789"
+}
+b = a.transfer.account_lookup(di)
+print(b)
 
