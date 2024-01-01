@@ -63,3 +63,5 @@ class PaymentTransaction(SquadClient):
         - JSONDict: The response data from the Squad API.
         """
         return cls().requests._send_request(f"/transaction/verify/{transaction_ref}","get")
+    
+  

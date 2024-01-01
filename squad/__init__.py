@@ -15,7 +15,7 @@ class Squad(SquadClient):
          if not secret_key:
               raise InvalidSecretKey("you must pass a secret_key from Squad Dashboard")
          SquadClient.__init__(self, secret_key=secret_key,test=test)
-         self.transactions = PaymentTransaction
+         self.payments = PaymentTransaction
          self.merchants = SquadMerchant
          self.virtual_accounts = VirtualAccounts
 
