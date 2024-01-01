@@ -50,6 +50,7 @@ filter = {
 #b = a.virtual_accounts.filter_merchant_transaction(filter)
 #b = a.virtual_accounts.get_customer_by_virtual_account_number('3456987768')
 #b = a.virtual_accounts.get_customer_using_customer_identifier("hex11rthyuirjahdu")
+
 customer_data = {
     "customer_bvn": "12298752255",
     "customer_identifier": "hex11rthyuirjahdu",
@@ -70,3 +71,6 @@ simulate =  {
 #b = a.virtual_accounts.get_webhook_error_logs()
 #b = a.virtual_accounts.query_customer_transaction_by_customer_identifier("CCC")
 #print(b)
+
+# print(b)
+

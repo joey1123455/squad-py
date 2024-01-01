@@ -3,6 +3,7 @@
 .env
 .env/
 venv/
+notes.txt
 
 # Visual Studio Code
 .vscode/*
