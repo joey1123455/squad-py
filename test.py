@@ -63,7 +63,5 @@ data = {
     "virtual_account_number": "3998621828"
 }
 #b = a.virtual_accounts.update_beneficiary_account(data)
-print(b)
-=======
 # print(b)
 
