@@ -44,13 +44,13 @@ class TestSquadAPI(unittest.TestCase):
         # Assert the response from the API
         self.assertEqual(res["status"], 200)
 
-    def test_filter_merchant_transaction(self):
+    def test_query_merchant_transaction_with_filters(self):
         filter = {
             "transactionReference": "REFQVFJWNB75/1704003205952_1"
 
         }
 
-        res = self.squad_client.virtual_accounts.filter_merchant_transaction(filter)
+        res = self.squad_client.virtual_accounts.query_merchant_transaction_with_filters(filter)
         # Assert the response from the API
         self.assertEqual(res["status"], 200)
 
@@ -78,6 +78,45 @@ class TestSquadAPI(unittest.TestCase):
 
     def test_query_all_merchant_virtual_account(self):
         res = self.squad_client.virtual_accounts.query_all_merchant_virtual_account()
+        # Assert the response from the API
+        self.assertEqual(res["status"], 200)
+
+    def test_update_beneficiary_account(self):
+
+        data = {
+            "beneficiary_account": "1229706340",
+            "virtual_account_number": "3998621828"
+        }
+    
+        res = self.squad_client.virtual_accounts.update_beneficiary_account(data)
+        # Assert the response from the API
+        self.assertEqual(res["status"], 200)
+
+    def test_simulate_payment(self):
+
+        simulate =  {
+            "virtual_account_number": "3998621828",
+            "amount": "2000"
+        }
+    
+        res = self.squad_client.virtual_accounts.simulate_payment(simulate)
+        # Assert the response from the API
+        self.assertEqual(res["status"], 200)
+
+    def test_get_webhook_error_logs(self):
+
+        simulate =  {
+            "virtual_account_number": "3998621828",
+            "amount": "2000"
+        }
+    
+        res = self.squad_client.virtual_accounts.get_webhook_error_logs()
+        # Assert the response from the API
+        self.assertEqual(res["status"], 200)
+
+    def test_query_customer_transaction_by_customer_identifier(self):
+    
+        res = self.squad_client.virtual_accounts.query_customer_transaction_by_customer_identifier("CCC")
         # Assert the response from the API
         self.assertEqual(res["status"], 200)
 
