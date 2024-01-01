@@ -69,7 +69,7 @@ class VirtualAccounts(SquadClient):
       return cls().requests._send_request(f"/virtual-account/merchant/transactions","get")
     
     @classmethod
-    def filter_merchant_transaction(cls,filter_data:dict):
+    def filter_merchant_transaction(cls,filter_data:dict ={}):
         """Query All Merchant Transactions with Multiple Filters.\n
         This endpoint allows you query all transactions and filter using multiple parameters like virtual account number, start and end dates, customer Identifier etc
 
@@ -108,7 +108,46 @@ class VirtualAccounts(SquadClient):
         return cls().requests._send_request(f"/virtual-account/{customer_identifier}","get")
     
     @classmethod
-    def update_customer_bvn(cls, customer_data: dict):
+    def update_customer_bvn(cls, customer_data: dict ={}):
         """
+        Update Customer's BVN and Unfreeze Transaction
+
+
+        Parameters
+         - `customer_data` (dict): A dictionary containing customer  information.
+              Optional:
+                - `customer_bvn` (str): Bank Verification Number of Customer.
+                - `customer_identifier` (str): Unique number given to customer by merchant.
+                - `phone_number` (str): customer's phone number.
+        """
+        return cls().requests._send_request(f"/virtual-account/update/bvn","patch",data=customer_data)
+    
+    @classmethod
+    def query_all_merchant_virtual_account(cls, filter_data: dict = {}):
+        """ Query All Merchant's Virtual Accounts.\n
+            This is an endpoint to look-up the virtual account numbers related to a merchant.
+
+        Parameters
+         - `filter_data` (dict): A dictionary containing filter information.
+              Optional:
+                - `page` (int): Page Number to Display.
+                - `perPage` (int): Number of records per Page.
+                - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+                - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+        """
+
+        return cls().requests._send_request(f"/virtual-account/merchant/accounts","get",data=filter_data)
+    
+    @classmethod
+    def update_beneficiary_account(cls, beneficiary_data: dict):
+        """
+        Update Beneficiary Account
         
+        Parameters
+            - `beneficiary_data` (dict): A dictionary containing beneficiary information.
+                ## Required:
+                    - `beneficiary_account` (str): 10 digit valid NUBAN account number.
+                    - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.
         """
+
+        return cls().requests._send_request("/virtual-account/update/beneficiary/account","patch",data=beneficiary_data)
