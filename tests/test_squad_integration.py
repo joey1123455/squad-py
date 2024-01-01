@@ -22,14 +22,15 @@ class TestSquadPayments(unittest.TestCase):
             "initiate_type": "inline",
             "currency": "USD",
             "transaction_ref": self.transaction_ref,
+            "is_recurring": True
         }
         
-        res = self.squad_client.transactions.initiate_transaction(transaction_data)
-        print(res)
+        res = self.squad_client.payments.initiate_transaction(transaction_data)
+        # print(res)
         self.assertEqual(res["status"], 200)
 
     def test_verify_transaction(self):
-        res = self.squad_client.transactions.verify_transaction("1ae16cde-a46f-4cfb-a6c1-c44a659debbc")
+        res = self.squad_client.payments.verify_transaction("1ae16cde-a46f-4cfb-a6c1-c44a659debbc")
 
         # # Assert the response from the API
         self.assertEqual(res["status"], 200)
