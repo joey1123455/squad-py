@@ -5,6 +5,7 @@ from squad import Squad
 
 config = dotenv_values(".env")
 secret_key = config["SK2"]
+bvn = config["BVN"]
 a = Squad(secret_key=secret_key)
 
 class TestSquadAPI(unittest.TestCase):
@@ -27,11 +28,11 @@ class TestSquadAPI(unittest.TestCase):
 
     def test_create_customer_virtual_account(self):
         customer_data = {
-            "customer_identifier": "CCC",
-            "first_name": "Techzilla- Joesph",
-            "last_name": "Okoye",
-            "mobile_num": "08139011943",
-            "email": "ayo@gmail.com",
+            "customer_identifier": "CCC12efGi",
+            "first_name": "SDK devs- Joseph",
+            "last_name": "Folayan",
+            "mobile_num": "08118997115",
+            "email": "folayanjoey@gmail.com",
             "bvn": config["BVN"],
             "dob": "30/10/1990",
             "address": "22 Kota street, UK",
@@ -61,7 +62,22 @@ class TestSquadAPI(unittest.TestCase):
 
     def test_get_customer_using_customer_identifier(self):
 
-        res = self.squad_client.virtual_accounts.get_customer_using_customer_identifier('hex11rthyuirjahdu')
+        res = self.squad_client.virtual_accounts.get_customer_using_customer_identifier('CCC12efGi')
+        # Assert the response from the API
+        self.assertEqual(res["status"], 200)
+
+    def test_update_customer_bvn(self):
+        customer_data = {
+            "customer_bvn": bvn,
+            "customer_identifier": "CCC12efGi",
+            "phone_number": "08118997115"
+        }
+        res = self.squad_client.virtual_accounts.update_customer_bvn(customer_data)
+        # Assert the response from the API
+        self.assertIsNotNone(res)
+
+    def test_query_all_merchant_virtual_account(self):
+        res = self.squad_client.virtual_accounts.query_all_merchant_virtual_account()
         # Assert the response from the API
         self.assertEqual(res["status"], 200)
 
