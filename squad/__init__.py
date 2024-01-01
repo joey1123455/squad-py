@@ -3,6 +3,7 @@ from squad._squad import SquadClient
 from squad.utils.exceptions import InvalidSecretKey
 from squad.payments import PaymentTransaction
 from squad.merchants import SquadMerchant
+from squad.virtual_accounts import VirtualAccounts
 __all__ =  (
     "Squad",
 )
@@ -16,5 +17,6 @@ class Squad(SquadClient):
          SquadClient.__init__(self, secret_key=secret_key,test=test)
          self.transactions = PaymentTransaction
          self.merchants = SquadMerchant
+         self.virtual_accounts = VirtualAccounts
 
     

@@ -2,7 +2,7 @@ from dotenv import dotenv_values
 from squad import Squad
 
 config = dotenv_values(".env")
-a = Squad(secret_key=config["SECRET_KEY"])
+a = Squad(secret_key=config["SK2"])
 transaction_data = {
     "email": "recipient@example.com",
     "amount": 1000,
@@ -19,4 +19,28 @@ merchant = {
     "bank_code": "901",
     "bank": "Access Bank"
 }
-print(a.merchants.create_sub_users(merchant))
+#print(a.merchants.create_sub_users(merchant))
+business = {
+        "customer_identifier": "CCC",
+        "business_name": "Techzilla-Joseph Okoye",
+        "mobile_num": "08139011943",
+        "bvn": "12343211654",
+        "beneficiary_account": "4920299492"
+    }
+
+
+Customer ={
+        "customer_identifier": "CCC",
+        "first_name": "Techzilla- Joesph",
+        "last_name": "Okoye",
+        "mobile_num": "08139011943",
+        "email": "ayo@gmail.com",
+        "bvn": "12343211654",
+        "dob": "30/10/1990",
+        "address": "22 Kota street, UK",
+        "gender": "1",
+        "beneficiary_account": "4920299492"
+    }
+b = a.virtual_accounts.create_business_virtual_account(business)
+c = a.virtual_accounts.create_customer_virtual_account(Customer)
+print(b,c)
