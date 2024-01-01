@@ -50,4 +50,16 @@ filter = {
 #b = a.virtual_accounts.filter_merchant_transaction(filter)
 #b = a.virtual_accounts.get_customer_by_virtual_account_number('3456987768')
 #b = a.virtual_accounts.get_customer_using_customer_identifier("hex11rthyuirjahdu")
+customer_data = {
+    "customer_bvn": "12298752255",
+    "customer_identifier": "hex11rthyuirjahdu",
+    "phone_number": "0813901194"
+}
+#b = a.virtual_accounts.update_customer_bvn(customer_data)
+#b = a.virtual_accounts.query_all_merchant_virtual_account()
+data = {
+    "beneficiary_account": "1229706340",
+    "virtual_account_number": "3998621828"
+}
+#b = a.virtual_accounts.update_beneficiary_account(data)
 print(b)

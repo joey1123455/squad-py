@@ -54,8 +54,7 @@ class SquadRequest(object):
             request_data=data,
             headers=self.headers,
         )
-        response_data = self.parse_json_payload(payload)
-        return response_data
+        return payload
 
     def _request_wrapper(self, url, method, headers, request_data=None):
         try:
@@ -63,16 +62,22 @@ class SquadRequest(object):
                 response = self.session.get(url, headers=headers, params=request_data)
             elif method.lower() == "post":
                 response = self.session.post(url, headers=headers, json=request_data)
+            elif method.lower() == "patch":
+                response = self.session.patch(url, headers=headers, json=request_data)
+            elif method.lower() == "delete":
+                response = self.session.delete(url, headers=headers, params=request_data)
+
             response.raise_for_status()
-            return response.content
+            return response.json()
         
         except requests.exceptions.HTTPError as err:
             if err.response.status_code == 403:
                 raise InvalidSecretKey(f"Invalid secret_key for {'test' if self.test else 'live'} mode")
             else:
-                raise err
+                
+                return err.response.json()
         except requests.exceptions.RequestException as e:
-            raise e
+            return e.response.json()
 
     @staticmethod
     def parse_json_payload(payload: bytes) -> JSONDict:
