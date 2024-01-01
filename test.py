@@ -62,4 +62,11 @@ data = {
     "virtual_account_number": "3998621828"
 }
 #b = a.virtual_accounts.update_beneficiary_account(data)
-print(b)
+simulate =  {
+    "virtual_account_number": "3998621828",
+    "amount": "2000"
+}
+#b = a.virtual_accounts.simulate_payment(simulate)
+#b = a.virtual_accounts.get_webhook_error_logs()
+#b = a.virtual_accounts.query_customer_transaction_by_customer_identifier("CCC")
+#print(b)
