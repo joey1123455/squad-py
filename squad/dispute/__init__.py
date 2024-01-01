@@ -12,3 +12,35 @@ class Dispute(SquadClient):
         This API is used to get all disputes on your transactions raised by your customers.
         """
         return cls().requests._send_request(f"/dispute","get")
+    
+    @classmethod
+    def get_dispute_upload_url(cls, ticket_id: str, file_name: str):
+        """ 
+        Get Upload URL\n
+        This API is used to get a unique URL to upload an evidence(file) which is a proof or reason to reject a dispute. This is only necessary when we want to reject a dispute.
+        
+
+        Parameters
+            
+        ## Required:
+                - `ticket_id` (str)
+                - `file_name` (str)
+        """
+        return cls().requests._send_request(f"/dispute/upload-url/{ticket_id}/{file_name}","get")
+    
+    @classmethod
+    def resolve_dispute(cls, ticket_id: str, dispute_data: dict):
+        """ 
+        Get Upload URL\n
+        This API is used to get a unique URL to upload an evidence(file) which is a proof or reason to reject a dispute. This is only necessary when we want to reject a dispute.
+        
+
+        Parameters
+            
+        ## Required:
+                - `ticket_id` (str)
+                - `action` (str):  This is the action you want to be taken on the raised dispute. The value of this action can be either "rejected" or "accepted"
+        ##   Optional:
+                - `file_name` (str): The name of the file uploaded.
+        """
+        return cls().requests._send_request(f"/dispute/{ticket_id}/resolve","get",data=dispute_data)
