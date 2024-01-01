@@ -70,6 +70,7 @@ class SquadRequest(object):
             if err.response.status_code == 403:
                 raise InvalidSecretKey(f"Invalid secret_key for {'test' if self.test else 'live'} mode")
             else:
+                print(err)
                 raise err
         except requests.exceptions.RequestException as e:
             raise e
