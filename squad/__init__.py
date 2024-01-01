@@ -6,6 +6,7 @@ from squad.merchants import SquadMerchant
 from squad.virtual_accounts import VirtualAccounts
 from squad.dispute import Dispute
 from squad.wallet import Wallet
+from squad.transfer import SquadTransfer
 
 __all__ =  (
     "Squad",
@@ -23,6 +24,7 @@ class Squad(SquadClient):
          self.virtual_accounts = VirtualAccounts
          self.dispute = Dispute
          self.wallet = Wallet
+         self.transfer = SquadTransfer
 
 
     

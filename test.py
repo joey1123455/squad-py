@@ -88,6 +88,11 @@ dic = {
     "return_msg": "Successful"
 }
 #b = a.payments.generate_payment_link(dic)
-b = a.wallet.balance()
+#b = a.wallet.balance()
+di = {
+    "bank_code":"000013",
+    "account_number":"0123456789"
+}
+b = a.transfer.account_lookup(di)
 print(b)
 
