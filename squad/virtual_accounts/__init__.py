@@ -3,9 +3,9 @@ from squad._squad import SquadClient
 
 class VirtualAccounts(SquadClient):
     """
-    ### Squad Virtual Accounts API allows you to create and reserve bank account numbers for receiving payments from your customers.
-    ##### Please note that there is a new compliance rule put in place to mitigate against fraud. As a result, all virtual accounts must carry a slug as a prefix to the name. The slug must be a portion of your business name or abbreviations of your business name as one word. Please note that slash (/) is not allowed and only hyphen can be used.
-    ##### Please be informed that all accounts without the prefix will be flagged by our compliance and fraud team and might ultimately be closed.
+    Squad Virtual Accounts API allows you to create and reserve bank account numbers for receiving payments from your customers.\n
+    Please note that there is a new compliance rule put in place to mitigate against fraud. As a result, all virtual accounts must carry a slug as a prefix to the name.\n The slug must be a portion of your business name or abbreviations of your business name as one word. Please note that slash (/) is not allowed and only hyphen can be used.\n
+    Please be informed that all accounts without the prefix will be flagged by our compliance and fraud team and might ultimately be closed.
     """
 
     @classmethod
@@ -32,7 +32,7 @@ class VirtualAccounts(SquadClient):
         Returns:
         - JSONDict: The response data from the Squad API.
         """
-        cls().requests._send_request("/virtual-account","post",data=customer_data)
+        return cls().requests._send_request("/virtual-account","post",data=customer_data)
 
     @classmethod
     def create_business_virtual_account(cls, business_data: dict):
@@ -52,4 +52,25 @@ class VirtualAccounts(SquadClient):
         Returns:
         - JSONDict: The response data from the Squad API.
         """
-        cls().requests._send_request("/virtual-account/business","post",data=business_data)
+        return cls().requests._send_request("/virtual-account/business","post",data=business_data)
+
+    @classmethod
+    def merchant_transactions(cls):
+      """ Query All Merchant's Transactions.\n
+          This is an endpoint to query all the merchant transactions over a period of time.
+
+
+        Parameters:
+            - None
+
+        Returns:
+                - JSONDict: The response data from the Squad API.
+      """
+      return cls().requests._send_request(f"/virtual-account/merchant/transactions","get")
+    
+    @classmethod
+    def filter_merchant_transaction(cls,filter_data:dict):
+        """Query All Merchant Transactions with Multiple Filters.\n
+        This endpoint allows you query all transactions and filter using multiple parameters like virtual account number, start and end dates, customer Identifier etc
+        """
+        return cls().requests._send_request(f"/virtual-account/merchant/transactions/all","get",filter_data)
