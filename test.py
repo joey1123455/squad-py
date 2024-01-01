@@ -88,6 +88,6 @@ dic = {
     "return_msg": "Successful"
 }
 #b = a.payments.generate_payment_link(dic)
-b = a.dispute.get_dispute()
+b = a.wallet.balance()
 print(b)
 

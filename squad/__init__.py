@@ -5,6 +5,7 @@ from squad.payments import PaymentTransaction
 from squad.merchants import SquadMerchant
 from squad.virtual_accounts import VirtualAccounts
 from squad.dispute import Dispute
+from squad.wallet import Wallet
 
 __all__ =  (
     "Squad",
@@ -21,6 +22,7 @@ class Squad(SquadClient):
          self.merchants = SquadMerchant
          self.virtual_accounts = VirtualAccounts
          self.dispute = Dispute
+         self.wallet = Wallet
 
 
     
