@@ -9,6 +9,7 @@ transaction_data = {
     "initiate_type": "inline",
     "currency": "USD",
 }
+
 #print(a.payments.initiate_transaction(transaction_data))
 #txn_ref =  "SQDEBU6383961457377100021"
 #print(a.payments.verify_transaction(txn_ref))
@@ -65,3 +66,23 @@ data = {
 #b = a.virtual_accounts.update_beneficiary_account(data)
 # print(b)
 
+#test for value addes service class
+
+# print(a.value_added_service.get_data_bundles("MTN"))
+
+bundles_data = { 
+    "phone_number": "07062918558", 
+    "amount": 1200,
+    "plan_code": "1005" 
+} 
+# print(a.value_added_service.data_bundles(bundles_data=bundles_data))
+
+
+airtime_data ={ 
+    "phone_number": "08139011943", 
+    "amount": 200 
+} 
+
+# print(a.value_added_service.airtime(airtime_data=airtime_data))
+
+#(a.value_added_service.all_vending_transaction(1,3,'debit'))
