@@ -7,7 +7,7 @@ secret_key = config["SK2"]
 bvn = config["BVN"]
 a = Squad(secret_key=secret_key)
 
-class TestPos(unittest.TestCase):
+class TestSquadPos(unittest.TestCase):
 
     def setUp(self):
         self.squad_client = Squad(secret_key=secret_key)
