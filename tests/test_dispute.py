@@ -8,7 +8,7 @@ config = dotenv_values(".env")
 secret_key = config["SK2"]
 a = Squad(secret_key=secret_key)
 
-class TestDispute(unittest.TestCase):
+class TestSquadDispute(unittest.TestCase):
 
     def setUp(self):
         self.squad_client = Squad(secret_key=secret_key)
