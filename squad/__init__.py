@@ -4,12 +4,15 @@ from squad.utils.exceptions import InvalidSecretKey
 from squad.payments import PaymentTransaction
 from squad.merchants import SquadMerchant
 from squad.virtual_accounts import VirtualAccounts
+<<<<<<<<< Temporary merge branch 1
 from squad.value_added_service import SquadServices_Client
+=========
 from squad.dispute import Dispute
 from squad.wallet import Wallet
 from squad.transfer import SquadTransfer
 from squad.pos import SquadPOS
 
+>>>>>>>>> Temporary merge branch 2
 __all__ =  (
     "Squad",
 )
@@ -24,11 +27,14 @@ class Squad(SquadClient):
          self.payments = PaymentTransaction
          self.merchants = SquadMerchant
          self.virtual_accounts = VirtualAccounts
+<<<<<<<<< Temporary merge branch 1
          self.value_added_service = SquadServices_Client
+=========
          self.dispute = Dispute
          self.wallet = Wallet
          self.transfer = SquadTransfer
          self.pos = SquadPOS
 
+>>>>>>>>> Temporary merge branch 2
 
     
