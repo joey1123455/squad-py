@@ -6,7 +6,7 @@ description = (
 
 setup(
     name='squadco',
-    version='1.0.0',
+    version='1.0.1',
     author='Uche David, Joseph Folayan, Peter Adetunji',
     author_email='debugtitan.hub@outlook.com, folayanjoey@gmail.com, peteradetunji30@gmail.com',
     description=description,
