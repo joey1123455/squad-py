@@ -32,7 +32,7 @@ client = Squad("SECRET_KEY",test=False)
 from squad import Squad
 client = Squad("SECRET_KEY")
 
-verify_transaction = client.payments.verify_transaction(txn_ref="SQDEBU6383961457377100021")
+verify_transaction = client.payments.verify_transaction(transaction_ref="SQDEBU6383961457377100021")
 print(verify_transaction)
 ```
 
