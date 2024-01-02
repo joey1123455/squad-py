@@ -1,5 +1,4 @@
 import unittest
-from unittest.mock import MagicMock
 from dotenv import dotenv_values
 from squad import Squad
 
@@ -8,7 +7,7 @@ secret_key = config["SK2"]
 bvn = config["BVN"]
 a = Squad(secret_key=secret_key)
 
-class TestSquadAPI(unittest.TestCase):
+class TestSquadVirtualAccounts(unittest.TestCase):
 
     def setUp(self):
         self.squad_client = Squad(secret_key=secret_key)

@@ -64,4 +64,43 @@ class PaymentTransaction(SquadClient):
         """
         return cls().requests._send_request(f"/transaction/verify/{transaction_ref}","get")
     
+    @classmethod
+    def generate_payment_link(cls, payment_data: dict):
+        """ Creating Payment Link 
+
+        Parameters
+            - `payment_data` (dict): A dictionary containing payment link information.
+                ## Required:
+                    - `name` (str): Title/Name of the Payment Link.
+                    - `hash` (str): Unique string that identifies each payment Link (cannot exceed 255 characters).
+                    - `link_status` (int): Value can be 0 or 1. 1 - Active, 0 - Inactive.
+                    - `expire_by` (str): sample: 2021-04-26T11:22:08.587Z.
+                    - `amount` (int): Amount must be in the lowest currency. (kobo for Naira transactions and cent for Dollar transaction) i.e 40000 = 400NGN.
+                    - `currency_id` (str): USD or NGN (USD - US Dollars & NGN - Nigerian Naira).
+                    - `description` (str): This describes what the payment link does.
+                   Optional:
+                    - `redirect_link` (str): URL to be redirected to after payment. When this is not provided, the default redirect URL set on your dashboard will be used.
+                    - `return_message` (str): Message to be displayed to the customer after payment via the link.
+        """
+        return cls().requests._send_request(f"/payment_link/otp","post",data=payment_data)
+    
+    @classmethod
+    def refund(cls, data: dict):
+        """ Initiate refund process on a successful transaction.
+
+        Parameters
+            - `payment_data` (dict): A dictionary containing payment link information.
+                ## Required:
+                    - `gateway_transaction_ref` (str): Unique reference that uniquely identifies the medium of payment and can be obtained from  the webhook notification sent to you.
+                    - `transaction_ref` (str): unique reference that identifies a transaction. Can be obtained from the dashboard or the webhook notification sent to you.
+                    - `refund_type` (str): The value of this parameter is either "Full" or "Partial".
+                    - `reason_for_refund` (str): Reason for initiating the refund.
+                
+                   Optional:
+                    - `refund_amount` (str): Refund amount is in kobo or cent. This is only required for "Partial" refunds.
+        """
+        return cls().requests._send_request(f"/transaction/refund","post",data=data)
+    
+  
+    
   
