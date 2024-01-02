@@ -55,7 +55,7 @@ class VirtualAccounts(SquadClient):
         return cls().requests._send_request("/virtual-account/business","post",data=business_data)
 
     @classmethod
-    def merchant_transactions(cls):
+    def query_merchant_transactions(cls):
       """ Query All Merchant's Transactions.\n
           This is an endpoint to query all the merchant transactions over a period of time.
 
@@ -69,7 +69,7 @@ class VirtualAccounts(SquadClient):
       return cls().requests._send_request(f"/virtual-account/merchant/transactions","get")
     
     @classmethod
-    def filter_merchant_transaction(cls,filter_data:dict ={}):
+    def query_merchant_transaction_with_filters(cls,filter_data:dict ={}):
         """Query All Merchant Transactions with Multiple Filters.\n
         This endpoint allows you query all transactions and filter using multiple parameters like virtual account number, start and end dates, customer Identifier etc
 
@@ -151,3 +151,56 @@ class VirtualAccounts(SquadClient):
         """
 
         return cls().requests._send_request("/virtual-account/update/beneficiary/account","patch",data=beneficiary_data)
+    
+    @classmethod
+    def simulate_payment(cls, payment_data:dict):
+        """ 
+        Simulate Payment.\n
+        This is an endpoint to simulate payments 
+
+
+        Parameters
+            - `payment_data` (dict): A dictionary containing beneficiary information.
+                ## Required:
+                    - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.
+                   Optional:
+                    - `amount` (str): Simulated Amount.
+        """
+        return cls().requests._send_request("/virtual-account/simulate/payment","post",data=payment_data)
+    
+    @classmethod
+    def get_webhook_error_logs(cls, filter_data:dict = {}):
+        """ 
+        Get Webhook Error Log
+
+        Parameters
+         - `filter_data` (dict): A dictionary containing filter information.
+              Optional:
+                - `page` (int): Page Number to Display.
+                - `perPage` (int): Number of records per Page.
+        """
+        return cls().requests._send_request(f"/virtual-account/webhook/logs","get",data=filter_data)
+    
+    @classmethod
+    def delete_webhook_error_logs(cls, transaction_ref: str):
+        """ 
+        Delete Webhook Error Log
+
+        Parameters
+        ## Required:
+            - `transaction_ref` (str): Unique Transaction Ref that identifies each virtual account and gotten from the retrieved webhook error log.
+        """
+        return cls().requests._send_request(f"/virtual-account/webhook/logs/{transaction_ref}","delete")
+    
+    @classmethod
+    def query_customer_transaction_by_customer_identifier(cls, customer_identifier: str):
+        """ 
+        Query Customer Transaction by Customer Identifier.\n
+        This is an endpoint to query the transactions a customer has made. This is done using the customer's identifier which was passed when creating the virtual account.
+
+
+        Parameters
+        ## Required:
+            - `customer_identifier` (str):  Unique Customer Identifier that identifies each virtual account
+        """
+        return cls().requests._send_request(f"/virtual-account/customer/transactions/{customer_identifier}","get")
