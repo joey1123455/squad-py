@@ -25,7 +25,7 @@ class SquadPOS(SquadClient):
     def create_terminal(cls, terminal_dict: dict = {}):
         """
         Create Terminal\n
-        This API allows yopu create multiple SquadPOS terminals which are associated to your squad account
+        This API allows you to create multiple SquadPOS terminals which are associated to your squad account
 
         Parameters
          - `filter_data` (dict): A dictionary containing terminal information.
