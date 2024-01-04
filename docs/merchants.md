@@ -1,0 +1,2 @@
+# Merchant Module
+::: squad.merchants

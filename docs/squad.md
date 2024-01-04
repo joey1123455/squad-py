@@ -1,0 +1,3 @@
+# Squad Module
+
+::: squad

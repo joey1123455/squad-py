@@ -1,0 +1,17 @@
+site_name: Squad-py Documentation
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - index.md
+  - squad.md
+  - payment.md
+  - merchants.md
+  - virtual_accounts.md
+  - wallet.md
+  - pos.md
+  - transfer.md

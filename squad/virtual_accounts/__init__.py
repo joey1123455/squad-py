@@ -1,3 +1,329 @@
+"""
+VirtualAccounts Module
+=====================
+
+Subclass of SquadClient representing the Squad Virtual Accounts API.
+
+Squad Virtual Accounts API allows you to create and reserve bank account numbers for receiving payments from your customers.
+Please note that there is a new compliance rule put in place to mitigate against fraud. As a result, all virtual accounts must carry a slug as a prefix to the name.
+The slug must be a portion of your business name or abbreviations of your business name as one word. Please note that slash (/) is not allowed and only hyphen can be used.
+Please be informed that all accounts without the prefix will be flagged by our compliance and fraud team and might ultimately be closed.
+
+Methods
+-------
+create_customer_virtual_account(customer_data: dict) -> JSONDict:
+    
+    Creating Virtual Accounts for Customers.
+
+    Parameters:
+    - `customer_data` (dict): A dictionary containing customer information.
+        Required fields:
+            - `first_name` (str): customer first name.
+            - `last_name` (integer): customer last name.
+            - `middle_name` (str): customer middle name.
+            - `mobile_num` (str): 08012345678 (doesn't take more than 11 digits).
+            - `dob` (date): mm/dd/yyyy.
+            - `email` (str): customer email.
+            - `bvn` (str): BNV is compulsory.
+            - `gender` (str): "1" - Male, "2" -Female.
+            - `address` (str): customer address.
+            - `customer_identifier` (str): unique customer identifier as given by the merchant.
+        Optional fields:
+            - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant 
+              where money sent to this Virtual account is paid into. 
+              Please note that when the beneficiary account is not provided, money paid into this virtual account go into your wallet 
+              and will be paid out/settled in T+1 settlement time.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    customer_data = {
+        "first_name": "John",
+        "last_name": "Doe",
+        "middle_name": "M",
+        "mobile_num": "08012345678",
+        "dob": "01/01/1990",
+        "email": "john.doe@example.com",
+        "bvn": "12345678901",
+        "gender": "1",
+        "address": "123 Main Street",
+        "customer_identifier": "ABC123",
+        "beneficiary_account": "1234567890"
+    }
+    response = VirtualAccounts.create_customer_virtual_account(customer_data)
+    print(response)
+    ```
+
+create_business_virtual_account(business_data: dict) -> JSONDict:
+    
+    Creating Virtual Accounts for Business.
+
+    Parameters:
+    - `business_data` (dict): A dictionary containing customer information.
+        Required fields:
+            - `bvn` (str): Bank Verification Number.
+            - `business_name` (str): Name of Business/Customer.
+            - `customer_identifier` (str): An alphanumeric string used to identify a customer/business in your system 
+              which will be tied to the virtual account being created.
+            - `mobile_num` (str): 08012345678 (doesn't take more than 11 digits).
+        Optional fields:
+            - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant 
+              where money sent to this Virtual account is paid into. 
+              Please note that when the beneficiary account is not provided, money paid into this virtual account go into your wallet 
+              and will be paid out/settled in T+1 settlement time.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    business_data = {
+        "bvn": "12345678901",
+        "business_name": "ABC Corporation",
+        "customer_identifier": "ABC123",
+        "mobile_num": "08012345678",
+        "beneficiary_account": "1234567890"
+    }
+    response = VirtualAccounts.create_business_virtual_account(business_data)
+    print(response)
+    ```
+    
+
+query_merchant_transactions() -> JSONDict:
+    
+    Query All Merchant's Transactions.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    response = VirtualAccounts.query_merchant_transactions()
+    print(response)
+    ```
+    
+
+query_merchant_transaction_with_filters(filter_data: dict = {}) -> JSONDict:
+    
+    Query All Merchant Transactions with Multiple Filters.
+
+    Parameters:
+    - `filter_data` (dict): A dictionary containing filter information.
+        Optional:
+            - `page` (int): Page Number to Display.
+            - `perPage` (int): Number of records per Page.
+            - `virtualAccount` (int): a unique 10-digit virtual account number.
+            - `customerIdentifier` (str): Unique Identifier used to create/identify a customer's virtual account.
+            - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+            - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+            - `transactionReference` (str): Unique Identifier of a transaction.
+            - `session_id` (str): Unique ID that identifies all NIP transactions.
+            - `dir` (str): Takes two possible values: "DESC" and "ASC". "DESC" - descending order "ASC" - ascending order.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    filter_data = {"page": 1, "perPage": 10, "dir": "ASC"}
+    response = VirtualAccounts.query_merchant_transaction_with_filters(filter_data)
+    print(response)
+    ```
+    
+
+get_customer_by_virtual_account_number(virtual_account_number: str) -> JSONDict:
+    
+    Get Customer Details by Virtual Account Number.
+
+    Parameters:
+    - `virtual_account_number` (str): The Virtual Account Number.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    virtual_account_number = "1234567890"
+    response = VirtualAccounts.get_customer_by_virtual_account_number(virtual_account_number)
+    print(response)
+    ```
+    
+
+get_customer_using_customer_identifier(customer_identifier: str) -> JSONDict:
+    
+    Get Customer Details Using Customer Identifier.
+
+    Parameters:
+    - `customer_identifier` (str): The Customer Identifier.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    customer_identifier = "ABC123"
+    response = VirtualAccounts.get_customer_using_customer_identifier(customer_identifier)
+    print(response)
+    ```
+    
+
+update_customer_bvn(customer_data: dict = {}) -> JSONDict:
+    
+    Update Customer's BVN and Unfreeze Transaction.
+
+    Parameters:
+    - `customer_data` (dict): A dictionary containing customer information.
+        Optional:
+            - `customer_bvn` (str): Bank Verification Number of Customer.
+            - `customer_identifier` (str): Unique number given to the customer by the merchant.
+            - `phone
+
+_number` (str): customer's phone number.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    customer_data = {"customer_bvn": "12345678901", "customer_identifier": "ABC123", "phone_number": "08012345678"}
+    response = VirtualAccounts.update_customer_bvn(customer_data)
+    print(response)
+    ```
+    
+
+query_all_merchant_virtual_account(filter_data: dict = {}) -> JSONDict:
+    
+    Query All Merchant's Virtual Accounts.
+
+    Parameters:
+    - `filter_data` (dict): A dictionary containing filter information.
+        Optional:
+            - `page` (int): Page Number to Display.
+            - `perPage` (int): Number of records per Page.
+            - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+            - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    filter_data = {"page": 1, "perPage": 10, "startDate": "09-19-2022", "endDate": "09-19-2022"}
+    response = VirtualAccounts.query_all_merchant_virtual_account(filter_data)
+    print(response)
+    ```
+    
+
+update_beneficiary_account(beneficiary_data: dict) -> JSONDict:
+    
+    Update Beneficiary Account.
+
+    Parameters:
+    - `beneficiary_data` (dict): A dictionary containing beneficiary information.
+        Required:
+            - `beneficiary_account` (str): 10 digit valid NUBAN account number.
+            - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    beneficiary_data = {"beneficiary_account": "1234567890", "virtual_account_number": "1234567890"}
+    response = VirtualAccounts.update_beneficiary_account(beneficiary_data)
+    print(response)
+    ```
+    
+
+simulate_payment(payment_data: dict) -> JSONDict:
+    
+    Simulate Payment.
+
+    Parameters:
+    - `payment_data` (dict): A dictionary containing beneficiary information.
+        Required:
+            - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.
+        Optional:
+            - `amount` (str): Simulated Amount.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    payment_data = {"virtual_account_number": "1234567890", "amount": "50000"}
+    response = VirtualAccounts.simulate_payment(payment_data)
+    print(response)
+    ```
+    
+
+get_webhook_error_logs(filter_data: dict = {}) -> JSONDict:
+    
+    Get Webhook Error Log.
+
+    Parameters:
+    - `filter_data` (dict): A dictionary containing filter information.
+        Optional:
+            - `page` (int): Page Number to Display.
+            - `perPage` (int): Number of records per Page.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    filter_data = {"page": 1, "perPage": 10}
+    response = VirtualAccounts.get_webhook_error_logs(filter_data)
+    print(response)
+    ```
+    
+
+delete_webhook_error_logs(transaction_ref: str) -> JSONDict:
+    
+    Delete Webhook Error Log.
+
+    Parameters:
+    - `transaction_ref` (str): Unique Transaction Ref that identifies each virtual account 
+      and is obtained from the retrieved webhook error log.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    transaction_ref = "ABC123"
+    response = VirtualAccounts.delete_webhook_error_logs(transaction_ref)
+    print(response)
+    ```
+    
+
+query_customer_transaction_by_customer_identifier(customer_identifier: str) -> JSONDict:
+    
+    Query Customer Transaction by Customer Identifier.
+
+    Parameters:
+    - `customer_identifier` (str): Unique Customer Identifier that identifies each virtual account.
+
+    Returns:
+    - JSONDict: The response data from the Squad API.
+
+    Example:
+    ```python
+    customer_identifier = "ABC123"
+    response = VirtualAccounts.query_customer_transaction_by_customer_identifier(customer_identifier)
+    print(response)
+    ```
+    
+
+Attributes
+----------
+Inherited from SquadClient.
+"""
+
+
+
 from squad._squad import SquadClient
 
 

@@ -1,3 +1,66 @@
+"""
+Squad Package
+=============
+
+Module providing a client for interacting with the Squad API.
+
+Package Structure:
+------------------
+- `json`: JSON parsing library.
+- `requests`: HTTP library.
+- `requests.adapters`: Provides the implementation for HTTP Adapters.
+- `urllib3.util`: Utilities provided by urllib3 library.
+- `squad.utils.exceptions`: Custom exceptions for Squad API.
+- `squad.utils.types`: Type definitions for Squad API.
+- `squad.utils.logging`: Logging utilities for Squad API.
+
+Global Attributes:
+------------------
+- `_LOGGER`: Logger instance for logging Squad requests.
+
+Classes:
+--------
+1. `SquadState`: Represents a shared state class for making class attributes global.
+    - Class Attributes:
+        - `_shared_state`: Shared state dictionary for class attributes.
+
+2. `SquadClient(SquadState)`: Represents a client for interacting with the Squad API.
+    - Inherits from `SquadState`.
+    - Attributes:
+        - `_shared_state`: Shared state dictionary for class attributes.
+    - Methods:
+        - `__init__(self, **kwargs)`: Initializes the SquadClient instance.
+
+3. `SquadRequest`: Represents the HTTP request handling class for Squad API.
+    - Attributes:
+        - `_API_BASE_URL`: Base URL for Squad API (sandbox or live).
+        - `headers`: HTTP headers for Squad requests.
+        - `request_timeout`: Timeout for Squad requests.
+        - `session`: Requests session for handling HTTP requests.
+    - Methods:
+        - `__init__(self, headers=None, test=True)`: Initializes the SquadRequest instance.
+        - `_send_request(self, endpoint: str, method="get", **kwargs)`: Sends a request to a Squad API endpoint.
+        - `_request_wrapper(self, url, method, headers, request_data=None)`: Wraps the HTTP request for Squad API.
+        - `parse_json_payload(self, payload: bytes) -> JSONDict`: Parses JSON payload from the HTTP response.
+
+Functions:
+----------
+None.
+
+Note:
+-----
+- The package includes modules for JSON parsing, HTTP requests, HTTP Adapters, urllib3 utilities,
+  custom exceptions, type definitions, and logging utilities.
+- The `SquadClient` class represents a client for interacting with the Squad API, and it inherits from the `SquadState` class.
+- The `SquadRequest` class handles HTTP requests for the Squad API, and it is used internally by the `SquadClient` class.
+- The package provides global attributes like `_LOGGER` for logging Squad requests.
+- Custom exceptions (`SquadError` and `InvalidSecretKey`) are defined in the `squad.utils.exceptions` module.
+- Type definitions (`JSONDict`) are provided in the `squad.utils.types` module.
+- Logging utilities are available in the `squad.utils.logging` module.
+"""
+
+
+
 import json
 import requests
 from requests.adapters import HTTPAdapter

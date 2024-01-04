@@ -1,7 +1,68 @@
 from squad._squad import SquadClient
 
 class PaymentTransaction(SquadClient):
-    """ Squad Payments Base """
+    """ 
+
+    This class provides functionalities related to payment transactions within the Squad API.
+    It includes methods for initiating a transaction, charging a card, verifying a transaction,
+    generating payment links, and initiating the refund process.
+
+    Attributes:
+    - `initiate_transaction`: Initiate a transaction.
+    - `charge_card`: Charge a card using the token generated during the initial transaction.
+    - `verify_transaction`: Verify the status of a particular transaction.
+    - `generate_payment_link`: Create a payment link.
+    - `refund`: Initiate the refund process on a successful transaction.
+
+    Example:
+    ```python
+    # Create an instance of PaymentTransaction
+    payment_instance = PaymentTransaction()
+
+    # Initiate a transaction
+    transaction_data = {
+        'email': 'recipient@example.com',
+        'amount': 1000,
+        'initiate_type': 'inline',
+        'currency': 'USD'
+    }
+    initiate_result = payment_instance.initiate_transaction(payment_data=transaction_data)
+
+    # Charge a card using the token generated during the initial transaction
+    charge_data = {
+        'amount': 500,
+        'token_id': 'unique_token_id'
+    }
+    charge_result = payment_instance.charge_card(payment_data=charge_data)
+
+    # Verify the status of a transaction
+    transaction_ref = 'unique_transaction_reference'
+    verify_result = payment_instance.verify_transaction(transaction_ref=transaction_ref)
+
+    # Generate a payment link
+    link_data = {
+        'name': 'Payment Link',
+        'hash': 'unique_hash',
+        'link_status': 1,
+        'expire_by': '2022-01-01T00:00:00.000Z',
+        'amount': 2000,
+        'currency_id': 'NGN',
+        'description': 'Description of the payment link'
+    }
+    link_result = payment_instance.generate_payment_link(payment_data=link_data)
+
+    # Initiate a refund process
+    refund_data = {
+        'gateway_transaction_ref': 'unique_gateway_transaction_ref',
+        'transaction_ref': 'unique_transaction_ref',
+        'refund_type': 'Full',
+        'reason_for_refund': 'Reason for refund'
+    }
+    refund_result = payment_instance.refund(data=refund_data)
+    ```
+
+    For more details on individual operations and available parameters, refer to the documentation.
+    """
 
     @classmethod
     def initiate_transaction(cls, payment_data: dict):

@@ -1,0 +1,2 @@
+# Wallet Module
+::: squad.wallet
