@@ -1,3 +1,75 @@
+"""
+Squad Services Client Package
+============================
+
+Module providing a Python client for interacting with the Squad API, offering functionalities related to Squad Value Added Services.
+
+Package Structure:
+------------------
+- `squad.services.squad_services_client`: Module containing the `SquadServices_Client` class.
+
+Classes:
+--------
+1. `SquadServices_Client(SquadClient)`: Represents a class providing functionalities related to Squad Services within the Squad API.
+    - Methods:
+        - `airtime(cls, airtime_data: dict) -> JSONDict`: Vend Airtime.
+            - Parameters:
+                - `airtime_data` (dict): Dictionary containing data to vend airtime.
+                    - Required fields:
+                        - `phone_number` (str): 11-digit phone number (e.g., "08139011943").
+                        - `amount` (int): Amount in naira.
+
+        - `get_data_bundles(cls, network: str) -> JSONDict`: Get Data Bundles Plan.
+            - Parameters:
+                - `network` (str): User Teleco ID (e.g., "MTN", "GLO", "AIRTEL", "MTN").
+
+        - `data_bundles(cls, bundles_data: dict) -> JSONDict`: Vend Data.
+            - Parameters:
+                - `bundles_data` (dict): Dictionary containing data to vend data.
+                    - Required fields:
+                        - `phone_number` (str): 11-digit phone number (e.g., "08139011943").
+                        - `amount` (int): Amount of the corresponding plan_code.
+                        - `plan_code` (str): The plan code obtained from the `get_data_bundles` method (e.g., "1001").
+
+        - `all_vending_transaction(cls, page: int, per_page: int, action: str) -> JSONDict`: Get All Vending Transactions.
+            - Parameters:
+                - `page` (int): The page of the transaction the merchant wants to view.
+                - `per_page` (int): Number of transactions the merchant wants to view per page.
+                - `action` (str): The type of transaction the merchant wants to see (e.g., "debit").
+
+Example:
+--------
+```python
+# Create an instance of SquadServices_Client
+services_client_instance = SquadServices_Client()
+
+# Vend Airtime
+airtime_data = {
+    'phone_number': '08139011943',
+    'amount': 100
+}
+airtime_result = services_client_instance.airtime(airtime_data)
+
+# Get Data Bundles Plan
+network = 'MTN'
+data_bundles_result = services_client_instance.get_data_bundles(network)
+
+# Vend Data
+bundles_data = {
+    'phone_number': '08139011943',
+    'amount': 500,
+    'plan_code': '1001'
+}
+data_result = services_client_instance.data_bundles(bundles_data)
+
+# Get All Vending Transactions
+page = 1
+per_page = 10
+action = 'debit'
+transactions_result = services_client_instance.all_vending_transaction(page, per_page, action)
+```
+"""
+
 from squad._squad import SquadClient
 
 class SquadServices_Client(SquadClient):

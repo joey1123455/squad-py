@@ -11,3 +11,9 @@ else
 endif
 
 .PHONY: test
+
+serve_docs:
+	mkdocs serve
+
+build_docs:
+	mkdocs build

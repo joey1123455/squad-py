@@ -1,3 +1,72 @@
+"""
+Payment Transaction Package
+===========================
+
+Module providing a Python client for interacting with the Squad API, offering functionalities related to payment transactions.
+
+Package Structure:
+------------------
+- `squad.payments.payment_transaction`: Module containing the `PaymentTransaction` class.
+
+Classes:
+--------
+1. `PaymentTransaction(SquadClient)`: Represents a class providing functionalities related to payment transactions within the Squad API.
+    - Methods:
+        - `initiate_transaction(cls, payment_data: dict) -> JSONDict`: Initiate a transaction.
+        - `charge_card(cls, payment_data: dict) -> JSONDict`: Charge a card using the token generated during the initial transaction.
+        - `verify_transaction(cls, transaction_ref: str) -> JSONDict`: Verify the status of a particular transaction.
+        - `generate_payment_link(cls, payment_data: dict) -> JSONDict`: Create a payment link.
+        - `refund(cls, data: dict) -> JSONDict`: Initiate the refund process on a successful transaction.
+
+Example:
+--------
+```python
+# Create an instance of PaymentTransaction
+payment_instance = PaymentTransaction()
+
+# Initiate a transaction
+transaction_data = {
+    'email': 'recipient@example.com',
+    'amount': 1000,
+    'initiate_type': 'inline',
+    'currency': 'USD'
+}
+initiate_result = payment_instance.initiate_transaction(payment_data=transaction_data)
+
+# Charge a card using the token generated during the initial transaction
+charge_data = {
+    'amount': 500,
+    'token_id': 'unique_token_id'
+}
+charge_result = payment_instance.charge_card(payment_data=charge_data)
+
+# Verify the status of a transaction
+transaction_ref = 'unique_transaction_reference'
+verify_result = payment_instance.verify_transaction(transaction_ref=transaction_ref)
+
+# Generate a payment link
+link_data = {
+    'name': 'Payment Link',
+    'hash': 'unique_hash',
+    'link_status': 1,
+    'expire_by': '2022-01-01T00:00:00.000Z',
+    'amount': 2000,
+    'currency_id': 'NGN',
+    'description': 'Description of the payment link'
+}
+link_result = payment_instance.generate_payment_link(payment_data=link_data)
+
+# Initiate a refund process
+refund_data = {
+    'gateway_transaction_ref': 'unique_gateway_transaction_ref',
+    'transaction_ref': 'unique_transaction_ref',
+    'refund_type': 'Full',
+    'reason_for_refund': 'Reason for refund'
+}
+refund_result = payment_instance.refund(data=refund_data)
+```
+"""
+
 from squad._squad import SquadClient
 
 class PaymentTransaction(SquadClient):

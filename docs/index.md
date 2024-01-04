@@ -38,6 +38,7 @@ merchant_info = squad_instance.merchants.get_merchant_info(merchant_id='merchant
 5. [Wallet Package](wallet.md)
 6. [Pos Package](pos.md)
 7. [Transfer Package](transfer.md)
+8. [Value Added Sevices Package](value_added.md)
 
 
 Quickly find what you're looking for depending on

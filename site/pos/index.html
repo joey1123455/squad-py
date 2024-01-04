@@ -1,0 +1,1442 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../wallet/">
+      
+      
+        <link rel="next" href="../transfer/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>POS Module - Squad-py Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pos-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Squad-py Documentation" class="md-header__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Squad-py Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              POS Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Squad-py Documentation" class="md-nav__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Squad-py Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <center>SQUAD-PY<center/>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchant Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtual_accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      pos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS" class="md-nav__link">
+    <span class="md-ellipsis">
+      SquadPOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SquadPOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_terminal()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_terminal()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_terminals()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_all_terminals()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_transaction()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_all_transaction()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value_added/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value Added Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      pos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS" class="md-nav__link">
+    <span class="md-ellipsis">
+      SquadPOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SquadPOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_terminal()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="create_terminal()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.create_terminal--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_terminals()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_all_terminals()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_terminals--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_transaction()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_all_transaction()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.pos.SquadPOS.get_all_transaction--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="pos-module">POS Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="squad.pos"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Squad POS Python Client.</p>
+<p>This module provides a Python client for interacting with the Squad POS API. Squad POS offers functionalities related to Point of Sale (POS) operations, including managing transactions, creating terminals, and retrieving information about terminals associated with your Squad account.</p>
+<p>Usage:
+- Import the <code>SquadPOS</code> class from this module.
+- Instantiate the <code>SquadPOS</code> class with the required parameters, including the secret key obtained from the Squad Dashboard.
+- Use the various methods of the <code>SquadPOS</code> class to perform specific POS-related API operations.</p>
+<p>Example:</p>
+<pre><code class="language-python"># Import the SquadPOS class
+from squad import SquadPOS
+
+# Create an instance of SquadPOS
+pos_instance = SquadPOS(secret_key='your_secret_key')
+
+# Get all Squad POS transactions
+transactions_data = {
+    'perPage': 10,
+    'page': 1,
+    'date_from': '2022-01-01',
+    'date_to': '2022-02-01',
+    'sort_by': 'createdAt',
+    'sort_by_dir': 'ASC'
+}
+all_transactions = pos_instance.get_all_transaction(**transactions_data)
+
+# Create a SquadPOS terminal
+terminal_data = {
+    'email': 'terminal@example.com',
+    'name': 'Terminal Name',
+    'phone': '12345678901',
+    'location_id': 123
+}
+created_terminal = pos_instance.create_terminal(terminal_dict=terminal_data)
+
+# Get all SquadPOS terminals
+terminals_data = {
+    'page': 1,
+    'perPage': 10,
+    'location_id': 456,
+    'sort_by': 'createdAt',
+    'sort_by_dir': 'DESC',
+    'date_from': '2022-01-01',
+    'date_to': '2022-02-01',
+    'active': True
+}
+all_terminals = pos_instance.get_all_terminals(filter_dict=terminals_data)
+</code></pre>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="squad.pos.SquadPOS" class="doc doc-heading">
+          <code>SquadPOS</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="squad._squad.SquadClient">SquadClient</span></code></p>
+
+  
+      <p>Squad POS Base</p>
+
+            <details class="quote">
+              <summary>Source code in <code>squad/pos/__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SquadPOS</span><span class="p">(</span><span class="n">SquadClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Squad POS Base&quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_all_transaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">perPage</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">filter_dict</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all your Squad POS Transactions.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        per_page : int</span>
+<span class="sd">            Number of records per page.</span>
+<span class="sd">        page : int</span>
+<span class="sd">            Page number to display.</span>
+<span class="sd">        filter_dict : dict, optional</span>
+<span class="sd">            A dictionary containing filter information.</span>
+
+<span class="sd">            Required:</span>
+<span class="sd">            - `page` (int): Page number to display.</span>
+<span class="sd">            - `per_page` (int): Number of records per page.</span>
+
+<span class="sd">            Optional:</span>
+<span class="sd">            - `date_from` (date): Format: YYYY-MM-DD. Start date for filtering.</span>
+<span class="sd">            - `date_to` (date): Format: YYYY-MM-DD. End date for filtering.</span>
+<span class="sd">            - `sort_by` (str): Sorting parameter. Can have a value of &quot;createdAt&quot;.</span>
+<span class="sd">            - `sort_by_dir` (str): Arranges the transactions in ascending or descending order.</span>
+<span class="sd">              Possible values are &quot;ASC&quot; for ascending order, &quot;DESC&quot; for descending order.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            JSON response containing Squad POS transactions.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; SquadPOS.get_all_transactions(per_page=10, page=1, filter_dict={&quot;sort_by&quot;: &quot;createdAt&quot;})</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/softpos/transactions?perPage=</span><span class="si">{</span><span class="n">perPage</span><span class="si">}</span><span class="s2">&amp;page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_terminal</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">terminal_dict</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create Terminal.</span>
+
+<span class="sd">        This API allows you to create multiple SquadPOS terminals associated with your Squad account.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        terminal_dict : dict, required</span>
+<span class="sd">            A dictionary containing terminal information.</span>
+
+<span class="sd">            Required:</span>
+<span class="sd">            - `email` (str): Unique email to be associated with the terminal being created.</span>
+<span class="sd">            - `name` (str): Name to be associated with the terminal.</span>
+<span class="sd">            - `phone` (str): 11-digit phone number to be associated with the terminal.</span>
+<span class="sd">            - `location_id` (int): Unique ID that identifies a particular location.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            JSON response containing information about the created terminal.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; terminal_info = {&quot;email&quot;: &quot;example@example.com&quot;, &quot;name&quot;: &quot;Terminal1&quot;, &quot;phone&quot;: &quot;12345678901&quot;, &quot;location_id&quot;: 1}</span>
+<span class="sd">        &gt;&gt;&gt; SquadPOS.create_terminal(terminal_info)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/softpos/terminal&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">terminal_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_all_terminals</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_dict</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        See all SquadPOS terminals created and associated with your account.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        filter_dict : dict, optional</span>
+<span class="sd">            A dictionary containing filter information.</span>
+
+<span class="sd">            Required:</span>
+<span class="sd">            - `page` (int): Page number to display.</span>
+<span class="sd">            - `per_page` (int): Number of records per page.</span>
+
+<span class="sd">            Optional:</span>
+<span class="sd">            - `location_id` (int): ID that identifies a location.</span>
+<span class="sd">            - `sort_by` (str): Sorting parameter. Can have a value of &quot;createdAt&quot;.</span>
+<span class="sd">            - `sort_by_dir` (str): Arranges the transactions in ascending or descending order.</span>
+<span class="sd">              Possible values are &quot;ASC&quot; for ascending order, &quot;DESC&quot; for descending order.</span>
+<span class="sd">            - `date_from` (date): Format: YYYY-MM-DD. Start date for filtering.</span>
+<span class="sd">            - `date_to` (date): Format: YYYY-MM-DD. End date for filtering.</span>
+<span class="sd">            - `active` (bool): Takes a value of &quot;True&quot; or &quot;False&quot;.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            JSON response containing information about SquadPOS terminals.</span>
+
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
+<span class="sd">        &gt;&gt;&gt; SquadPOS.get_all_terminals(filter_dict={&quot;sort_by&quot;: &quot;createdAt&quot;, &quot;sort_by_dir&quot;: &quot;ASC&quot;})</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/softpos/terminals&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.pos.SquadPOS.create_terminal" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">create_terminal</span><span class="p">(</span><span class="n">terminal_dict</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create Terminal.</p>
+<p>This API allows you to create multiple SquadPOS terminals associated with your Squad account.</p>
+<h5 id="squad.pos.SquadPOS.create_terminal--parameters">Parameters</h5>
+<p>terminal_dict : dict, required
+    A dictionary containing terminal information.</p>
+<pre><code>Required:
+- `email` (str): Unique email to be associated with the terminal being created.
+- `name` (str): Name to be associated with the terminal.
+- `phone` (str): 11-digit phone number to be associated with the terminal.
+- `location_id` (int): Unique ID that identifies a particular location.
+</code></pre>
+<h5 id="squad.pos.SquadPOS.create_terminal--returns">Returns</h5>
+<p>dict
+    JSON response containing information about the created terminal.</p>
+<h5 id="squad.pos.SquadPOS.create_terminal--example">Example</h5>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>terminal_info = {"email": "example@example.com", "name": "Terminal1", "phone": "12345678901", "location_id": 1}
+SquadPOS.create_terminal(terminal_info)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/pos/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">create_terminal</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">terminal_dict</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create Terminal.</span>
+
+<span class="sd">    This API allows you to create multiple SquadPOS terminals associated with your Squad account.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    terminal_dict : dict, required</span>
+<span class="sd">        A dictionary containing terminal information.</span>
+
+<span class="sd">        Required:</span>
+<span class="sd">        - `email` (str): Unique email to be associated with the terminal being created.</span>
+<span class="sd">        - `name` (str): Name to be associated with the terminal.</span>
+<span class="sd">        - `phone` (str): 11-digit phone number to be associated with the terminal.</span>
+<span class="sd">        - `location_id` (int): Unique ID that identifies a particular location.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        JSON response containing information about the created terminal.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; terminal_info = {&quot;email&quot;: &quot;example@example.com&quot;, &quot;name&quot;: &quot;Terminal1&quot;, &quot;phone&quot;: &quot;12345678901&quot;, &quot;location_id&quot;: 1}</span>
+<span class="sd">    &gt;&gt;&gt; SquadPOS.create_terminal(terminal_info)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/softpos/terminal&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">terminal_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.pos.SquadPOS.get_all_terminals" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_all_terminals</span><span class="p">(</span><span class="n">filter_dict</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>See all SquadPOS terminals created and associated with your account.</p>
+<h5 id="squad.pos.SquadPOS.get_all_terminals--parameters">Parameters</h5>
+<p>filter_dict : dict, optional
+    A dictionary containing filter information.</p>
+<pre><code>Required:
+- `page` (int): Page number to display.
+- `per_page` (int): Number of records per page.
+
+Optional:
+- `location_id` (int): ID that identifies a location.
+- `sort_by` (str): Sorting parameter. Can have a value of "createdAt".
+- `sort_by_dir` (str): Arranges the transactions in ascending or descending order.
+  Possible values are "ASC" for ascending order, "DESC" for descending order.
+- `date_from` (date): Format: YYYY-MM-DD. Start date for filtering.
+- `date_to` (date): Format: YYYY-MM-DD. End date for filtering.
+- `active` (bool): Takes a value of "True" or "False".
+</code></pre>
+<h5 id="squad.pos.SquadPOS.get_all_terminals--returns">Returns</h5>
+<p>dict
+    JSON response containing information about SquadPOS terminals.</p>
+<h5 id="squad.pos.SquadPOS.get_all_terminals--example">Example</h5>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>SquadPOS.get_all_terminals(filter_dict={"sort_by": "createdAt", "sort_by_dir": "ASC"})</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/pos/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">get_all_terminals</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_dict</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    See all SquadPOS terminals created and associated with your account.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filter_dict : dict, optional</span>
+<span class="sd">        A dictionary containing filter information.</span>
+
+<span class="sd">        Required:</span>
+<span class="sd">        - `page` (int): Page number to display.</span>
+<span class="sd">        - `per_page` (int): Number of records per page.</span>
+
+<span class="sd">        Optional:</span>
+<span class="sd">        - `location_id` (int): ID that identifies a location.</span>
+<span class="sd">        - `sort_by` (str): Sorting parameter. Can have a value of &quot;createdAt&quot;.</span>
+<span class="sd">        - `sort_by_dir` (str): Arranges the transactions in ascending or descending order.</span>
+<span class="sd">          Possible values are &quot;ASC&quot; for ascending order, &quot;DESC&quot; for descending order.</span>
+<span class="sd">        - `date_from` (date): Format: YYYY-MM-DD. Start date for filtering.</span>
+<span class="sd">        - `date_to` (date): Format: YYYY-MM-DD. End date for filtering.</span>
+<span class="sd">        - `active` (bool): Takes a value of &quot;True&quot; or &quot;False&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        JSON response containing information about SquadPOS terminals.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; SquadPOS.get_all_terminals(filter_dict={&quot;sort_by&quot;: &quot;createdAt&quot;, &quot;sort_by_dir&quot;: &quot;ASC&quot;})</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/softpos/terminals&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.pos.SquadPOS.get_all_transaction" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_all_transaction</span><span class="p">(</span><span class="n">perPage</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">filter_dict</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Fetch all your Squad POS Transactions.</p>
+<h5 id="squad.pos.SquadPOS.get_all_transaction--parameters">Parameters</h5>
+<p>per_page : int
+    Number of records per page.
+page : int
+    Page number to display.
+filter_dict : dict, optional
+    A dictionary containing filter information.</p>
+<pre><code>Required:
+- `page` (int): Page number to display.
+- `per_page` (int): Number of records per page.
+
+Optional:
+- `date_from` (date): Format: YYYY-MM-DD. Start date for filtering.
+- `date_to` (date): Format: YYYY-MM-DD. End date for filtering.
+- `sort_by` (str): Sorting parameter. Can have a value of "createdAt".
+- `sort_by_dir` (str): Arranges the transactions in ascending or descending order.
+  Possible values are "ASC" for ascending order, "DESC" for descending order.
+</code></pre>
+<h5 id="squad.pos.SquadPOS.get_all_transaction--returns">Returns</h5>
+<p>dict
+    JSON response containing Squad POS transactions.</p>
+<h5 id="squad.pos.SquadPOS.get_all_transaction--example">Example</h5>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>SquadPOS.get_all_transactions(per_page=10, page=1, filter_dict={"sort_by": "createdAt"})</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/pos/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">get_all_transaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">perPage</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">filter_dict</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetch all your Squad POS Transactions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    per_page : int</span>
+<span class="sd">        Number of records per page.</span>
+<span class="sd">    page : int</span>
+<span class="sd">        Page number to display.</span>
+<span class="sd">    filter_dict : dict, optional</span>
+<span class="sd">        A dictionary containing filter information.</span>
+
+<span class="sd">        Required:</span>
+<span class="sd">        - `page` (int): Page number to display.</span>
+<span class="sd">        - `per_page` (int): Number of records per page.</span>
+
+<span class="sd">        Optional:</span>
+<span class="sd">        - `date_from` (date): Format: YYYY-MM-DD. Start date for filtering.</span>
+<span class="sd">        - `date_to` (date): Format: YYYY-MM-DD. End date for filtering.</span>
+<span class="sd">        - `sort_by` (str): Sorting parameter. Can have a value of &quot;createdAt&quot;.</span>
+<span class="sd">        - `sort_by_dir` (str): Arranges the transactions in ascending or descending order.</span>
+<span class="sd">          Possible values are &quot;ASC&quot; for ascending order, &quot;DESC&quot; for descending order.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        JSON response containing Squad POS transactions.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; SquadPOS.get_all_transactions(per_page=10, page=1, filter_dict={&quot;sort_by&quot;: &quot;createdAt&quot;})</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/softpos/transactions?perPage=</span><span class="si">{</span><span class="n">perPage</span><span class="si">}</span><span class="s2">&amp;page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

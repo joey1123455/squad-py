@@ -1,3 +1,32 @@
+"""
+Wallet Package
+==============
+
+Module providing a Python client for interacting with the Squad API, offering functionalities related to Squad Wallet.
+
+Package Structure:
+------------------
+- `squad.wallet.wallet`: Module containing the `Wallet` class.
+
+Classes:
+--------
+1. `Wallet(SquadClient)`: Represents a class providing functionalities related to Squad Wallet within the Squad API.
+    - Methods:
+        - `balance(cls, currency_id: str = "NGN") -> JSONDict`: Get Squad Wallet Balance.
+            - Parameters:
+                - `currency_id` (str): Currency code for the wallet balance (default is "NGN").
+
+Example:
+--------
+```python
+# Create an instance of Wallet
+wallet_instance = Wallet()
+
+# Get Squad Wallet Balance
+balance_result = wallet_instance.balance(currency_id='NGN')
+```
+"""
+
 from squad._squad import SquadClient
 
 class Wallet(SquadClient):

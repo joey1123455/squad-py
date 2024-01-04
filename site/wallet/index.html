@@ -1,0 +1,834 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../virtual_accounts/">
+      
+      
+        <link rel="next" href="../pos/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Wallet Module - Squad-py Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wallet-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Squad-py Documentation" class="md-header__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Squad-py Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wallet Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Squad-py Documentation" class="md-nav__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Squad-py Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <center>SQUAD-PY<center/>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchant Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtual_accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      wallet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.wallet--wallet-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wallet Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wallet Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet--package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet--classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.wallet.Wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wallet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wallet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet.Wallet.balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      balance()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="balance()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet.Wallet.balance--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value_added/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value Added Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      wallet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.wallet--wallet-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wallet Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wallet Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet--package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet--classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.wallet.Wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wallet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wallet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet.Wallet.balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      balance()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="balance()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.wallet.Wallet.balance--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="wallet-module">Wallet Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="squad.wallet"></a>
+  <div class="doc doc-contents first">
+  
+      <h2 id="squad.wallet--wallet-package">Wallet Package</h2>
+<p>Module providing a Python client for interacting with the Squad API, offering functionalities related to Squad Wallet.</p>
+<h3 id="squad.wallet--package-structure">Package Structure:</h3>
+<ul>
+<li><code>squad.wallet.wallet</code>: Module containing the <code>Wallet</code> class.</li>
+</ul>
+<h3 id="squad.wallet--classes">Classes:</h3>
+<ol>
+<li><code>Wallet(SquadClient)</code>: Represents a class providing functionalities related to Squad Wallet within the Squad API.<ul>
+<li>Methods:<ul>
+<li><code>balance(cls, currency_id: str = "NGN") -&gt; JSONDict</code>: Get Squad Wallet Balance.<ul>
+<li>Parameters:<ul>
+<li><code>currency_id</code> (str): Currency code for the wallet balance (default is "NGN").</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="squad.wallet--example">Example:</h3>
+<pre><code class="language-python"># Create an instance of Wallet
+wallet_instance = Wallet()
+
+# Get Squad Wallet Balance
+balance_result = wallet_instance.balance(currency_id='NGN')
+</code></pre>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="squad.wallet.Wallet" class="doc doc-heading">
+          <code>Wallet</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="squad._squad.SquadClient">SquadClient</span></code></p>
+
+  
+      <p>Squad Wallet Base</p>
+
+            <details class="quote">
+              <summary>Source code in <code>squad/wallet/__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Wallet</span><span class="p">(</span><span class="n">SquadClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Squad Wallet Base&quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">balance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">currency_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s2">&quot;NGN&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This endpoint allows you get your Squad Wallet Balance.\n</span>
+<span class="sd">        Please be informed that the wallet balance is in KOBO. (Please note that you can&#39;t get wallet balance for Dollar transactions)</span>
+
+<span class="sd">        Parameters</span>
+
+<span class="sd">        ## Required:</span>
+<span class="sd">                - `currency_id` (str): It only takes the value &quot;NGN&quot;. (Please note that you can&#39;t get wallet balance for Dollar transactions)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/merchant/balance&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;currency_id&quot;</span><span class="p">:</span> <span class="n">currency_id</span><span class="p">})</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.wallet.Wallet.balance" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">balance</span><span class="p">(</span><span class="n">currency_id</span><span class="o">=</span><span class="s1">&#39;NGN&#39;</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This endpoint allows you get your Squad Wallet Balance.</p>
+<p>Please be informed that the wallet balance is in KOBO. (Please note that you can't get wallet balance for Dollar transactions)</p>
+<p>Parameters</p>
+<h5 id="squad.wallet.Wallet.balance--required">Required:</h5>
+<pre><code>    - `currency_id` (str): It only takes the value "NGN". (Please note that you can't get wallet balance for Dollar transactions)
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/wallet/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">balance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">currency_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s2">&quot;NGN&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This endpoint allows you get your Squad Wallet Balance.\n</span>
+<span class="sd">    Please be informed that the wallet balance is in KOBO. (Please note that you can&#39;t get wallet balance for Dollar transactions)</span>
+
+<span class="sd">    Parameters</span>
+
+<span class="sd">    ## Required:</span>
+<span class="sd">            - `currency_id` (str): It only takes the value &quot;NGN&quot;. (Please note that you can&#39;t get wallet balance for Dollar transactions)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/merchant/balance&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;currency_id&quot;</span><span class="p">:</span> <span class="n">currency_id</span><span class="p">})</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

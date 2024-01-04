@@ -1,0 +1,1637 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../squad/">
+      
+      
+        <link rel="next" href="../merchants/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Payment Module - Squad-py Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#payment-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Squad-py Documentation" class="md-header__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Squad-py Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Payment Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Squad-py Documentation" class="md-nav__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Squad-py Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <center>SQUAD-PY<center/>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      payments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.payments--payment-transaction-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payment Transaction Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Payment Transaction Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments--package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments--classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaymentTransaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PaymentTransaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.charge_card" class="md-nav__link">
+    <span class="md-ellipsis">
+      charge_card()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.generate_payment_link" class="md-nav__link">
+    <span class="md-ellipsis">
+      generate_payment_link()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.initiate_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      initiate_transaction()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.refund" class="md-nav__link">
+    <span class="md-ellipsis">
+      refund()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.verify_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      verify_transaction()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchant Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtual_accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value_added/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value Added Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      payments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.payments--payment-transaction-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payment Transaction Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Payment Transaction Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments--package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments--classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaymentTransaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PaymentTransaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.charge_card" class="md-nav__link">
+    <span class="md-ellipsis">
+      charge_card()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.generate_payment_link" class="md-nav__link">
+    <span class="md-ellipsis">
+      generate_payment_link()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.initiate_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      initiate_transaction()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.refund" class="md-nav__link">
+    <span class="md-ellipsis">
+      refund()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.payments.PaymentTransaction.verify_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      verify_transaction()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="payment-module">Payment Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="squad.payments"></a>
+  <div class="doc doc-contents first">
+  
+      <h2 id="squad.payments--payment-transaction-package">Payment Transaction Package</h2>
+<p>Module providing a Python client for interacting with the Squad API, offering functionalities related to payment transactions.</p>
+<h3 id="squad.payments--package-structure">Package Structure:</h3>
+<ul>
+<li><code>squad.payments.payment_transaction</code>: Module containing the <code>PaymentTransaction</code> class.</li>
+</ul>
+<h3 id="squad.payments--classes">Classes:</h3>
+<ol>
+<li><code>PaymentTransaction(SquadClient)</code>: Represents a class providing functionalities related to payment transactions within the Squad API.<ul>
+<li>Methods:<ul>
+<li><code>initiate_transaction(cls, payment_data: dict) -&gt; JSONDict</code>: Initiate a transaction.</li>
+<li><code>charge_card(cls, payment_data: dict) -&gt; JSONDict</code>: Charge a card using the token generated during the initial transaction.</li>
+<li><code>verify_transaction(cls, transaction_ref: str) -&gt; JSONDict</code>: Verify the status of a particular transaction.</li>
+<li><code>generate_payment_link(cls, payment_data: dict) -&gt; JSONDict</code>: Create a payment link.</li>
+<li><code>refund(cls, data: dict) -&gt; JSONDict</code>: Initiate the refund process on a successful transaction.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="squad.payments--example">Example:</h3>
+<pre><code class="language-python"># Create an instance of PaymentTransaction
+payment_instance = PaymentTransaction()
+
+# Initiate a transaction
+transaction_data = {
+    'email': 'recipient@example.com',
+    'amount': 1000,
+    'initiate_type': 'inline',
+    'currency': 'USD'
+}
+initiate_result = payment_instance.initiate_transaction(payment_data=transaction_data)
+
+# Charge a card using the token generated during the initial transaction
+charge_data = {
+    'amount': 500,
+    'token_id': 'unique_token_id'
+}
+charge_result = payment_instance.charge_card(payment_data=charge_data)
+
+# Verify the status of a transaction
+transaction_ref = 'unique_transaction_reference'
+verify_result = payment_instance.verify_transaction(transaction_ref=transaction_ref)
+
+# Generate a payment link
+link_data = {
+    'name': 'Payment Link',
+    'hash': 'unique_hash',
+    'link_status': 1,
+    'expire_by': '2022-01-01T00:00:00.000Z',
+    'amount': 2000,
+    'currency_id': 'NGN',
+    'description': 'Description of the payment link'
+}
+link_result = payment_instance.generate_payment_link(payment_data=link_data)
+
+# Initiate a refund process
+refund_data = {
+    'gateway_transaction_ref': 'unique_gateway_transaction_ref',
+    'transaction_ref': 'unique_transaction_ref',
+    'refund_type': 'Full',
+    'reason_for_refund': 'Reason for refund'
+}
+refund_result = payment_instance.refund(data=refund_data)
+</code></pre>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="squad.payments.PaymentTransaction" class="doc doc-heading">
+          <code>PaymentTransaction</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="squad._squad.SquadClient">SquadClient</span></code></p>
+
+  
+      <p>This class provides functionalities related to payment transactions within the Squad API.
+It includes methods for initiating a transaction, charging a card, verifying a transaction,
+generating payment links, and initiating the refund process.</p>
+<p>Attributes:
+- <code>initiate_transaction</code>: Initiate a transaction.
+- <code>charge_card</code>: Charge a card using the token generated during the initial transaction.
+- <code>verify_transaction</code>: Verify the status of a particular transaction.
+- <code>generate_payment_link</code>: Create a payment link.
+- <code>refund</code>: Initiate the refund process on a successful transaction.</p>
+<p>Example:</p>
+<pre><code class="language-python"># Create an instance of PaymentTransaction
+payment_instance = PaymentTransaction()
+
+# Initiate a transaction
+transaction_data = {
+    'email': 'recipient@example.com',
+    'amount': 1000,
+    'initiate_type': 'inline',
+    'currency': 'USD'
+}
+initiate_result = payment_instance.initiate_transaction(payment_data=transaction_data)
+
+# Charge a card using the token generated during the initial transaction
+charge_data = {
+    'amount': 500,
+    'token_id': 'unique_token_id'
+}
+charge_result = payment_instance.charge_card(payment_data=charge_data)
+
+# Verify the status of a transaction
+transaction_ref = 'unique_transaction_reference'
+verify_result = payment_instance.verify_transaction(transaction_ref=transaction_ref)
+
+# Generate a payment link
+link_data = {
+    'name': 'Payment Link',
+    'hash': 'unique_hash',
+    'link_status': 1,
+    'expire_by': '2022-01-01T00:00:00.000Z',
+    'amount': 2000,
+    'currency_id': 'NGN',
+    'description': 'Description of the payment link'
+}
+link_result = payment_instance.generate_payment_link(payment_data=link_data)
+
+# Initiate a refund process
+refund_data = {
+    'gateway_transaction_ref': 'unique_gateway_transaction_ref',
+    'transaction_ref': 'unique_transaction_ref',
+    'refund_type': 'Full',
+    'reason_for_refund': 'Reason for refund'
+}
+refund_result = payment_instance.refund(data=refund_data)
+</code></pre>
+<p>For more details on individual operations and available parameters, refer to the documentation.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>squad/payments/__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PaymentTransaction</span><span class="p">(</span><span class="n">SquadClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+
+<span class="sd">    This class provides functionalities related to payment transactions within the Squad API.</span>
+<span class="sd">    It includes methods for initiating a transaction, charging a card, verifying a transaction,</span>
+<span class="sd">    generating payment links, and initiating the refund process.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    - `initiate_transaction`: Initiate a transaction.</span>
+<span class="sd">    - `charge_card`: Charge a card using the token generated during the initial transaction.</span>
+<span class="sd">    - `verify_transaction`: Verify the status of a particular transaction.</span>
+<span class="sd">    - `generate_payment_link`: Create a payment link.</span>
+<span class="sd">    - `refund`: Initiate the refund process on a successful transaction.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    ```python</span>
+<span class="sd">    # Create an instance of PaymentTransaction</span>
+<span class="sd">    payment_instance = PaymentTransaction()</span>
+
+<span class="sd">    # Initiate a transaction</span>
+<span class="sd">    transaction_data = {</span>
+<span class="sd">        &#39;email&#39;: &#39;recipient@example.com&#39;,</span>
+<span class="sd">        &#39;amount&#39;: 1000,</span>
+<span class="sd">        &#39;initiate_type&#39;: &#39;inline&#39;,</span>
+<span class="sd">        &#39;currency&#39;: &#39;USD&#39;</span>
+<span class="sd">    }</span>
+<span class="sd">    initiate_result = payment_instance.initiate_transaction(payment_data=transaction_data)</span>
+
+<span class="sd">    # Charge a card using the token generated during the initial transaction</span>
+<span class="sd">    charge_data = {</span>
+<span class="sd">        &#39;amount&#39;: 500,</span>
+<span class="sd">        &#39;token_id&#39;: &#39;unique_token_id&#39;</span>
+<span class="sd">    }</span>
+<span class="sd">    charge_result = payment_instance.charge_card(payment_data=charge_data)</span>
+
+<span class="sd">    # Verify the status of a transaction</span>
+<span class="sd">    transaction_ref = &#39;unique_transaction_reference&#39;</span>
+<span class="sd">    verify_result = payment_instance.verify_transaction(transaction_ref=transaction_ref)</span>
+
+<span class="sd">    # Generate a payment link</span>
+<span class="sd">    link_data = {</span>
+<span class="sd">        &#39;name&#39;: &#39;Payment Link&#39;,</span>
+<span class="sd">        &#39;hash&#39;: &#39;unique_hash&#39;,</span>
+<span class="sd">        &#39;link_status&#39;: 1,</span>
+<span class="sd">        &#39;expire_by&#39;: &#39;2022-01-01T00:00:00.000Z&#39;,</span>
+<span class="sd">        &#39;amount&#39;: 2000,</span>
+<span class="sd">        &#39;currency_id&#39;: &#39;NGN&#39;,</span>
+<span class="sd">        &#39;description&#39;: &#39;Description of the payment link&#39;</span>
+<span class="sd">    }</span>
+<span class="sd">    link_result = payment_instance.generate_payment_link(payment_data=link_data)</span>
+
+<span class="sd">    # Initiate a refund process</span>
+<span class="sd">    refund_data = {</span>
+<span class="sd">        &#39;gateway_transaction_ref&#39;: &#39;unique_gateway_transaction_ref&#39;,</span>
+<span class="sd">        &#39;transaction_ref&#39;: &#39;unique_transaction_ref&#39;,</span>
+<span class="sd">        &#39;refund_type&#39;: &#39;Full&#39;,</span>
+<span class="sd">        &#39;reason_for_refund&#39;: &#39;Reason for refund&#39;</span>
+<span class="sd">    }</span>
+<span class="sd">    refund_result = payment_instance.refund(data=refund_data)</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    For more details on individual operations and available parameters, refer to the documentation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">initiate_transaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initiate a transaction.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">          - `payment_data` (dict): A dictionary containing payment information.</span>
+<span class="sd">              Required fields:</span>
+<span class="sd">                - `email` (str): Recipient&#39;s email address.</span>
+<span class="sd">                - `amount` (integer): The amount of the payment.</span>
+<span class="sd">                - `initiate_type` (str): Type of initiation (default is &quot;inline&quot;).</span>
+<span class="sd">                - `currency` (str): Currency code for the payment (Allowed value is either &quot;USD&quot; or &quot;NGN&quot;).</span>
+<span class="sd">              Optional fields:</span>
+<span class="sd">                - `transaction_ref` (str): An alphanumeric string that uniquely identifies a transaction.</span>
+<span class="sd">                - `customer_name` (str): Name of Customer carrying out the transaction.</span>
+<span class="sd">                - `callback_url` (str): Sample: http://squadco.com.</span>
+<span class="sd">                - `payments_channels` (list): An array of payment channels to control what channels you want to make available for the user to make a payment with. Available channels include; [&#39;card&#39;, &#39;bank&#39; , &#39;ussd&#39;,&#39;transfer&#39;].</span>
+<span class="sd">                - `metadata` (dict): Object that contains any additional information that you want to record with the transaction. The custom fields in the object will be returned via webhook and the payment verification endpoint..</span>
+<span class="sd">                - `pass_charge` (bool): the charges is being paid by the customer (default is False).</span>
+<span class="sd">                - `sub_merchant_id` (str): This is the ID of a merchant that was created by an aggregator which allows the aggregator initiate a transaction on behalf of the submerchant.</span>
+
+<span class="sd">                - `is_recurring` (bool): This allows you charge a card without collecting the card information each time</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        - JSONDict: The response data from the Squad API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/transaction/initiate&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">charge_card</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Charge Card.</span>
+<span class="sd">        This allows you charge a card using the token generated during the initial transaction which was sent via webhook</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">         - `payment_data` (dict): A dictionary containing payment information.</span>
+<span class="sd">              Required fields:</span>
+<span class="sd">                - `amount` (int): Recipient&#39;s email address.</span>
+<span class="sd">                - `token_id` (str): A unique tokenization code for each card transaction and it is returned via the webhook for first charge on the card.</span>
+<span class="sd">              Optional fields:</span>
+<span class="sd">                - `transaction_ref` (str): Unique case-sensitive transaction reference. If you do not pass this parameter, Squad will generate a unique reference for you.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        - JSONDict: The response data from the Squad API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/transaction/charge_card&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">verify_transaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transaction_ref</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify Transaction.</span>
+<span class="sd">        This is an endpoint that allows you to query the status of a particular transaction using the unique transaction reference attached to the transaction.</span>
+<span class="sd">        Parameters:</span>
+<span class="sd">          Required fields:</span>
+<span class="sd">            - `transaction_ref` (str): Unique transaction reference that identifies each transaction</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        - JSONDict: The response data from the Squad API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/transaction/verify/</span><span class="si">{</span><span class="n">transaction_ref</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">generate_payment_link</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Creating Payment Link </span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            - `payment_data` (dict): A dictionary containing payment link information.</span>
+<span class="sd">                ## Required:</span>
+<span class="sd">                    - `name` (str): Title/Name of the Payment Link.</span>
+<span class="sd">                    - `hash` (str): Unique string that identifies each payment Link (cannot exceed 255 characters).</span>
+<span class="sd">                    - `link_status` (int): Value can be 0 or 1. 1 - Active, 0 - Inactive.</span>
+<span class="sd">                    - `expire_by` (str): sample: 2021-04-26T11:22:08.587Z.</span>
+<span class="sd">                    - `amount` (int): Amount must be in the lowest currency. (kobo for Naira transactions and cent for Dollar transaction) i.e 40000 = 400NGN.</span>
+<span class="sd">                    - `currency_id` (str): USD or NGN (USD - US Dollars &amp; NGN - Nigerian Naira).</span>
+<span class="sd">                    - `description` (str): This describes what the payment link does.</span>
+<span class="sd">                   Optional:</span>
+<span class="sd">                    - `redirect_link` (str): URL to be redirected to after payment. When this is not provided, the default redirect URL set on your dashboard will be used.</span>
+<span class="sd">                    - `return_message` (str): Message to be displayed to the customer after payment via the link.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/payment_link/otp&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">refund</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Initiate refund process on a successful transaction.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            - `payment_data` (dict): A dictionary containing payment link information.</span>
+<span class="sd">                ## Required:</span>
+<span class="sd">                    - `gateway_transaction_ref` (str): Unique reference that uniquely identifies the medium of payment and can be obtained from  the webhook notification sent to you.</span>
+<span class="sd">                    - `transaction_ref` (str): unique reference that identifies a transaction. Can be obtained from the dashboard or the webhook notification sent to you.</span>
+<span class="sd">                    - `refund_type` (str): The value of this parameter is either &quot;Full&quot; or &quot;Partial&quot;.</span>
+<span class="sd">                    - `reason_for_refund` (str): Reason for initiating the refund.</span>
+
+<span class="sd">                   Optional:</span>
+<span class="sd">                    - `refund_amount` (str): Refund amount is in kobo or cent. This is only required for &quot;Partial&quot; refunds.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/transaction/refund&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.payments.PaymentTransaction.charge_card" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">charge_card</span><span class="p">(</span><span class="n">payment_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Charge Card.
+This allows you charge a card using the token generated during the initial transaction which was sent via webhook</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>-</code></td>
+          <td>
+                <code>`payment_data` (dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing payment information.
+    Required fields:
+      - <code>amount</code> (int): Recipient's email address.
+      - <code>token_id</code> (str): A unique tokenization code for each card transaction and it is returned via the webhook for first charge on the card.
+    Optional fields:
+      - <code>transaction_ref</code> (str): Unique case-sensitive transaction reference. If you do not pass this parameter, Squad will generate a unique reference for you.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns:
+- JSONDict: The response data from the Squad API.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/payments/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">charge_card</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Charge Card.</span>
+<span class="sd">    This allows you charge a card using the token generated during the initial transaction which was sent via webhook</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">     - `payment_data` (dict): A dictionary containing payment information.</span>
+<span class="sd">          Required fields:</span>
+<span class="sd">            - `amount` (int): Recipient&#39;s email address.</span>
+<span class="sd">            - `token_id` (str): A unique tokenization code for each card transaction and it is returned via the webhook for first charge on the card.</span>
+<span class="sd">          Optional fields:</span>
+<span class="sd">            - `transaction_ref` (str): Unique case-sensitive transaction reference. If you do not pass this parameter, Squad will generate a unique reference for you.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - JSONDict: The response data from the Squad API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/transaction/charge_card&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.payments.PaymentTransaction.generate_payment_link" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">generate_payment_link</span><span class="p">(</span><span class="n">payment_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creating Payment Link </p>
+<p>Parameters
+    - <code>payment_data</code> (dict): A dictionary containing payment link information.
+        ## Required:
+            - <code>name</code> (str): Title/Name of the Payment Link.
+            - <code>hash</code> (str): Unique string that identifies each payment Link (cannot exceed 255 characters).
+            - <code>link_status</code> (int): Value can be 0 or 1. 1 - Active, 0 - Inactive.
+            - <code>expire_by</code> (str): sample: 2021-04-26T11:22:08.587Z.
+            - <code>amount</code> (int): Amount must be in the lowest currency. (kobo for Naira transactions and cent for Dollar transaction) i.e 40000 = 400NGN.
+            - <code>currency_id</code> (str): USD or NGN (USD - US Dollars &amp; NGN - Nigerian Naira).
+            - <code>description</code> (str): This describes what the payment link does.
+           Optional:
+            - <code>redirect_link</code> (str): URL to be redirected to after payment. When this is not provided, the default redirect URL set on your dashboard will be used.
+            - <code>return_message</code> (str): Message to be displayed to the customer after payment via the link.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/payments/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">generate_payment_link</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Creating Payment Link </span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">        - `payment_data` (dict): A dictionary containing payment link information.</span>
+<span class="sd">            ## Required:</span>
+<span class="sd">                - `name` (str): Title/Name of the Payment Link.</span>
+<span class="sd">                - `hash` (str): Unique string that identifies each payment Link (cannot exceed 255 characters).</span>
+<span class="sd">                - `link_status` (int): Value can be 0 or 1. 1 - Active, 0 - Inactive.</span>
+<span class="sd">                - `expire_by` (str): sample: 2021-04-26T11:22:08.587Z.</span>
+<span class="sd">                - `amount` (int): Amount must be in the lowest currency. (kobo for Naira transactions and cent for Dollar transaction) i.e 40000 = 400NGN.</span>
+<span class="sd">                - `currency_id` (str): USD or NGN (USD - US Dollars &amp; NGN - Nigerian Naira).</span>
+<span class="sd">                - `description` (str): This describes what the payment link does.</span>
+<span class="sd">               Optional:</span>
+<span class="sd">                - `redirect_link` (str): URL to be redirected to after payment. When this is not provided, the default redirect URL set on your dashboard will be used.</span>
+<span class="sd">                - `return_message` (str): Message to be displayed to the customer after payment via the link.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/payment_link/otp&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.payments.PaymentTransaction.initiate_transaction" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">initiate_transaction</span><span class="p">(</span><span class="n">payment_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initiate a transaction.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>-</code></td>
+          <td>
+                <code>`payment_data` (dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing payment information.
+  Required fields:
+    - <code>email</code> (str): Recipient's email address.
+    - <code>amount</code> (integer): The amount of the payment.
+    - <code>initiate_type</code> (str): Type of initiation (default is "inline").
+    - <code>currency</code> (str): Currency code for the payment (Allowed value is either "USD" or "NGN").
+  Optional fields:
+    - <code>transaction_ref</code> (str): An alphanumeric string that uniquely identifies a transaction.
+    - <code>customer_name</code> (str): Name of Customer carrying out the transaction.
+    - <code>callback_url</code> (str): Sample: http://squadco.com.
+    - <code>payments_channels</code> (list): An array of payment channels to control what channels you want to make available for the user to make a payment with. Available channels include; ['card', 'bank' , 'ussd','transfer'].
+    - <code>metadata</code> (dict): Object that contains any additional information that you want to record with the transaction. The custom fields in the object will be returned via webhook and the payment verification endpoint..
+    - <code>pass_charge</code> (bool): the charges is being paid by the customer (default is False).
+    - <code>sub_merchant_id</code> (str): This is the ID of a merchant that was created by an aggregator which allows the aggregator initiate a transaction on behalf of the submerchant.</p>
+<pre><code>- `is_recurring` (bool): This allows you charge a card without collecting the card information each time
+</code></pre>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns:
+- JSONDict: The response data from the Squad API.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/payments/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">initiate_transaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initiate a transaction.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">      - `payment_data` (dict): A dictionary containing payment information.</span>
+<span class="sd">          Required fields:</span>
+<span class="sd">            - `email` (str): Recipient&#39;s email address.</span>
+<span class="sd">            - `amount` (integer): The amount of the payment.</span>
+<span class="sd">            - `initiate_type` (str): Type of initiation (default is &quot;inline&quot;).</span>
+<span class="sd">            - `currency` (str): Currency code for the payment (Allowed value is either &quot;USD&quot; or &quot;NGN&quot;).</span>
+<span class="sd">          Optional fields:</span>
+<span class="sd">            - `transaction_ref` (str): An alphanumeric string that uniquely identifies a transaction.</span>
+<span class="sd">            - `customer_name` (str): Name of Customer carrying out the transaction.</span>
+<span class="sd">            - `callback_url` (str): Sample: http://squadco.com.</span>
+<span class="sd">            - `payments_channels` (list): An array of payment channels to control what channels you want to make available for the user to make a payment with. Available channels include; [&#39;card&#39;, &#39;bank&#39; , &#39;ussd&#39;,&#39;transfer&#39;].</span>
+<span class="sd">            - `metadata` (dict): Object that contains any additional information that you want to record with the transaction. The custom fields in the object will be returned via webhook and the payment verification endpoint..</span>
+<span class="sd">            - `pass_charge` (bool): the charges is being paid by the customer (default is False).</span>
+<span class="sd">            - `sub_merchant_id` (str): This is the ID of a merchant that was created by an aggregator which allows the aggregator initiate a transaction on behalf of the submerchant.</span>
+
+<span class="sd">            - `is_recurring` (bool): This allows you charge a card without collecting the card information each time</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - JSONDict: The response data from the Squad API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/transaction/initiate&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.payments.PaymentTransaction.refund" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">refund</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initiate refund process on a successful transaction.</p>
+<p>Parameters
+    - <code>payment_data</code> (dict): A dictionary containing payment link information.
+        ## Required:
+            - <code>gateway_transaction_ref</code> (str): Unique reference that uniquely identifies the medium of payment and can be obtained from  the webhook notification sent to you.
+            - <code>transaction_ref</code> (str): unique reference that identifies a transaction. Can be obtained from the dashboard or the webhook notification sent to you.
+            - <code>refund_type</code> (str): The value of this parameter is either "Full" or "Partial".
+            - <code>reason_for_refund</code> (str): Reason for initiating the refund.</p>
+<pre><code>       Optional:
+        - `refund_amount` (str): Refund amount is in kobo or cent. This is only required for "Partial" refunds.
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/payments/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">refund</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Initiate refund process on a successful transaction.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">        - `payment_data` (dict): A dictionary containing payment link information.</span>
+<span class="sd">            ## Required:</span>
+<span class="sd">                - `gateway_transaction_ref` (str): Unique reference that uniquely identifies the medium of payment and can be obtained from  the webhook notification sent to you.</span>
+<span class="sd">                - `transaction_ref` (str): unique reference that identifies a transaction. Can be obtained from the dashboard or the webhook notification sent to you.</span>
+<span class="sd">                - `refund_type` (str): The value of this parameter is either &quot;Full&quot; or &quot;Partial&quot;.</span>
+<span class="sd">                - `reason_for_refund` (str): Reason for initiating the refund.</span>
+
+<span class="sd">               Optional:</span>
+<span class="sd">                - `refund_amount` (str): Refund amount is in kobo or cent. This is only required for &quot;Partial&quot; refunds.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/transaction/refund&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.payments.PaymentTransaction.verify_transaction" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">verify_transaction</span><span class="p">(</span><span class="n">transaction_ref</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Verify Transaction.
+This is an endpoint that allows you to query the status of a particular transaction using the unique transaction reference attached to the transaction.
+Parameters:
+  Required fields:
+    - <code>transaction_ref</code> (str): Unique transaction reference that identifies each transaction</p>
+<p>Returns:
+- JSONDict: The response data from the Squad API.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/payments/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">verify_transaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transaction_ref</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verify Transaction.</span>
+<span class="sd">    This is an endpoint that allows you to query the status of a particular transaction using the unique transaction reference attached to the transaction.</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">      Required fields:</span>
+<span class="sd">        - `transaction_ref` (str): Unique transaction reference that identifies each transaction</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - JSONDict: The response data from the Squad API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/transaction/verify/</span><span class="si">{</span><span class="n">transaction_ref</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

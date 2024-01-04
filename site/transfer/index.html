@@ -1,0 +1,1525 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pos/">
+      
+      
+        <link rel="next" href="../value_added/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Transfer Module - Squad-py Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#transfer-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Squad-py Documentation" class="md-header__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Squad-py Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Transfer Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Squad-py Documentation" class="md-nav__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Squad-py Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <center>SQUAD-PY<center/>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchant Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtual_accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      transfer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.transfer--squadtransfer-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      SquadTransfer Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SquadTransfer Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer--transfer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer--methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer--attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      SquadTransfer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SquadTransfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer--transfer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.account_lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_lookup()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="account_lookup()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.account_lookup--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      fund_transfer()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fund_transfer()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--fund-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--transaction-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction Reference:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--for-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      For instance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.get_all_transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_transfer()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_all_transfer()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.get_all_transfer--get-all-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get All Transfers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.re_query" class="md-nav__link">
+    <span class="md-ellipsis">
+      re_query()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="re_query()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.re_query--re-query-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Re-query Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.re_query--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value_added/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value Added Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      transfer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.transfer--squadtransfer-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      SquadTransfer Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SquadTransfer Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer--transfer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer--methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer--attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      SquadTransfer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SquadTransfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer--transfer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.account_lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      account_lookup()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="account_lookup()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.account_lookup--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      fund_transfer()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fund_transfer()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--fund-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--transaction-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction Reference:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--for-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      For instance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.fund_transfer--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.get_all_transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_transfer()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_all_transfer()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.get_all_transfer--get-all-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get All Transfers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.re_query" class="md-nav__link">
+    <span class="md-ellipsis">
+      re_query()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="re_query()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.re_query--re-query-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Re-query Transfer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.transfer.SquadTransfer.re_query--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="transfer-module">Transfer Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="squad.transfer"></a>
+  <div class="doc doc-contents first">
+  
+      <h2 id="squad.transfer--squadtransfer-module">SquadTransfer Module</h2>
+<p>Subclass of SquadClient representing the Transfer API in the Squad SDK.</p>
+<h3 id="squad.transfer--transfer-api">Transfer API</h3>
+<p>These are suites of API that allow you to move funds from your Squad Wallet to a bank Account.</p>
+<h3 id="squad.transfer--methods">Methods</h3>
+<p>account_lookup(bank_data: dict) -&gt; JSONDict:</p>
+<pre><code>Account Lookup.
+
+This API allows you to lookup/confirm the account name of the recipient you intend to credit. 
+This should be done before initiating the transfer.
+
+Parameters:
+- `bank_code` (str): Unique NIP code that identifies a bank.
+- `account_number` (str): Account number you want to transfer to.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```
+bank_data = {"bank_code": "123", "account_number": "1234567890"}
+response = SquadTransfer.account_lookup(bank_data)
+print(response)
+```
+</code></pre>
+<p>fund_transfer(transfer_data: dict) -&gt; JSONDict:</p>
+<pre><code>Fund Transfer.
+
+This API allows you to transfer funds from your Squad Wallet to the account you have looked up.
+Please be informed that we will not be held liable for a mistake in transferring to a wrong account or an account that wasn't looked up.
+
+Transaction Reference:
+Transaction Reference used to initiate a transfer must be unique per transfer. 
+Kindly ensure that you append your merchant ID to the transaction Reference you are creating. 
+This is compulsory as it will throw an error if you don't append it.
+
+Parameters:
+- `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer.
+- `amount` (str): Amount to be transferred. Value is in Kobo.
+- `bank_code`(str): Unique NIP Code that identifies a bank.
+- `account_number` (str): 10-digit NUBAN account number to be transferred to. 
+  Must be an account that has been looked up and vetted to be transferred to.
+- `account_name` (str): The account name tied to the account number you are transferring to 
+  which you have looked up using our lookup API.
+- `currency_id`  (str): Takes only the value "NGN".
+- `remark` (str): A unique remark that will be sent with the transfer.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```
+transfer_data = {
+    "transaction_reference": "SBABCKDY_12345",
+    "amount": "50000",
+    "bank_code": "123",
+    "account_number": "1234567890",
+    "account_name": "John Doe",
+    "currency_id": "NGN",
+    "remark": "Payment for services",
+}
+response = SquadTransfer.fund_transfer(transfer_data)
+print(response)
+```
+</code></pre>
+<p>re_query(transaction_reference: str) -&gt; JSONDict:</p>
+<pre><code>Re-query Transfer.
+
+This API allows you to re-query the status of a transfer made to know if it was successful, failed, reversed, or pending.
+
+Parameters:
+- `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```
+transaction_reference = "SBABCKDY_12345"
+response = SquadTransfer.re_query(transaction_reference)
+print(response)
+```
+</code></pre>
+<p>get_all_transfer(filter_data: dict = {}) -&gt; JSONDict:</p>
+<pre><code>Get All Transfers.
+
+This API allows you to retrieve the details of all transfers you have done 
+from your Squad Wallet using this transfer solution.
+
+Parameters:
+- `filter_data` (dict): A dictionary containing filter information.
+    Optional:
+    - `page` (int): Page Number to Display.
+    - `perPage` (int): Number of records per Page.
+    - `dir` (str): Allows you to sort the records in either ascending or descending order. 
+      It takes the value "ASC" or "DESC"
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```
+filter_data = {"page": 1, "perPage": 10, "dir": "ASC"}
+response = SquadTransfer.get_all_transfer(filter_data)
+print(response)
+```
+</code></pre>
+<h3 id="squad.transfer--attributes">Attributes</h3>
+<p>Inherited from SquadClient.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="squad.transfer.SquadTransfer" class="doc doc-heading">
+          <code>SquadTransfer</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="squad._squad.SquadClient">SquadClient</span></code></p>
+
+  
+      <h4 id="squad.transfer.SquadTransfer--transfer-api">Transfer API</h4>
+<p>These are suites of API that allows you move funds from your Squad Wallet to a bank Account.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>squad/transfer/__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SquadTransfer</span><span class="p">(</span><span class="n">SquadClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ## Transfer API</span>
+<span class="sd">    These are suites of API that allows you move funds from your Squad Wallet to a bank Account.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">account_lookup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bank_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This API allows you lookup/confirm the account name of the recipient you intend to credit. This should be done before initiating the transfer.</span>
+
+<span class="sd">        Parameters</span>
+
+<span class="sd">        ## Required:</span>
+<span class="sd">                - `bank_code` (str): Unique NIP code that identifies a bank..</span>
+<span class="sd">                - `account_number` (str): Account number you want to transfer to.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;/payout/account/lookup&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bank_data</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">fund_transfer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transfer_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ## Fund Transfer</span>
+<span class="sd">        This API allows you to transfer funds from your Squad Wallet to the account you have looked up.</span>
+<span class="sd">        Please be informed that we will not be held liable for mistake in transferring to a wrong account or an account that wasn&#39;t looked up.</span>
+
+<span class="sd">        ## Transaction Reference:</span>
+<span class="sd">        Transaction Reference used to initiate a transfer must be unique per transfer. Kindly ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don&#39;t append it.</span>
+
+<span class="sd">        ## For instance:</span>
+<span class="sd">        If my Squad Merchant ID is SBABCKDY and i want to create a transaction ref for my transfer, then I will have something like:</span>
+<span class="sd">            - &quot;transaction_reference&quot;:&quot;SBABCKDY_12345&quot;.</span>
+
+<span class="sd">        ## Parameters</span>
+
+<span class="sd">        ## Required:</span>
+<span class="sd">                - `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer. Please ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don&#39;t append it.</span>
+<span class="sd">                - `amount` (str): Amount to be transferred. Value is in Kobo.</span>
+<span class="sd">                - `bank_code`(str): Unique NIP Code that identifies a bank.</span>
+<span class="sd">                - `account_number` (str): 10-digit NUBAN account number to be transferred to. Must be an account that has been looked up and vetted to be transferred to.</span>
+<span class="sd">                - `account_name` (str): The account name tied to the account number you are transferring to which you have looked up using our look up API.</span>
+<span class="sd">                - `currency_id`  (str): Takes only the value &quot;NGN&quot;.</span>
+<span class="sd">                - `remark` (str): A unique remark that will be sent with the transfer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;/payout/transfer&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">transfer_data</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">re_query</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transaction_reference</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ## Re-query Transfer</span>
+<span class="sd">        This API allows you re-query the status of a transfer made to know if it was successful, failed, reversed or pending.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ## Required:</span>
+<span class="sd">                - `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer. Please ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don&#39;t append it.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;/payout/requery&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;transaction_reference&quot;</span><span class="p">:</span> <span class="n">transaction_reference</span><span class="p">},</span>
+        <span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_all_transfer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ## Get All Transfers</span>
+<span class="sd">        This API Allows you retrieve the details of all transfers you have done from your Squad Wallet using this transfer solution.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">         - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">            Optional:</span>
+<span class="sd">                - `page` (int): Page Number to Display.</span>
+<span class="sd">                - `perPage` (int): Number of records per Page.</span>
+<span class="sd">                - `dir` (str): Allows you sort the records in either ascending or descending order. It takes the value &quot;ASC&quot; or &quot;DESC&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/payout/list&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.transfer.SquadTransfer.account_lookup" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">account_lookup</span><span class="p">(</span><span class="n">bank_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This API allows you lookup/confirm the account name of the recipient you intend to credit. This should be done before initiating the transfer.</p>
+<p>Parameters</p>
+<h5 id="squad.transfer.SquadTransfer.account_lookup--required">Required:</h5>
+<pre><code>    - `bank_code` (str): Unique NIP code that identifies a bank..
+    - `account_number` (str): Account number you want to transfer to.
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/transfer/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">account_lookup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">bank_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This API allows you lookup/confirm the account name of the recipient you intend to credit. This should be done before initiating the transfer.</span>
+
+<span class="sd">    Parameters</span>
+
+<span class="sd">    ## Required:</span>
+<span class="sd">            - `bank_code` (str): Unique NIP code that identifies a bank..</span>
+<span class="sd">            - `account_number` (str): Account number you want to transfer to.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;/payout/account/lookup&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bank_data</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.transfer.SquadTransfer.fund_transfer" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">fund_transfer</span><span class="p">(</span><span class="n">transfer_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <h5 id="squad.transfer.SquadTransfer.fund_transfer--fund-transfer">Fund Transfer</h5>
+<p>This API allows you to transfer funds from your Squad Wallet to the account you have looked up.
+Please be informed that we will not be held liable for mistake in transferring to a wrong account or an account that wasn't looked up.</p>
+<h5 id="squad.transfer.SquadTransfer.fund_transfer--transaction-reference">Transaction Reference:</h5>
+<p>Transaction Reference used to initiate a transfer must be unique per transfer. Kindly ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don't append it.</p>
+<h5 id="squad.transfer.SquadTransfer.fund_transfer--for-instance">For instance:</h5>
+<p>If my Squad Merchant ID is SBABCKDY and i want to create a transaction ref for my transfer, then I will have something like:
+    - "transaction_reference":"SBABCKDY_12345".</p>
+<h5 id="squad.transfer.SquadTransfer.fund_transfer--parameters">Parameters</h5>
+<h5 id="squad.transfer.SquadTransfer.fund_transfer--required">Required:</h5>
+<pre><code>    - `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer. Please ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don't append it.
+    - `amount` (str): Amount to be transferred. Value is in Kobo.
+    - `bank_code`(str): Unique NIP Code that identifies a bank.
+    - `account_number` (str): 10-digit NUBAN account number to be transferred to. Must be an account that has been looked up and vetted to be transferred to.
+    - `account_name` (str): The account name tied to the account number you are transferring to which you have looked up using our look up API.
+    - `currency_id`  (str): Takes only the value "NGN".
+    - `remark` (str): A unique remark that will be sent with the transfer.
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/transfer/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">fund_transfer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transfer_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ## Fund Transfer</span>
+<span class="sd">    This API allows you to transfer funds from your Squad Wallet to the account you have looked up.</span>
+<span class="sd">    Please be informed that we will not be held liable for mistake in transferring to a wrong account or an account that wasn&#39;t looked up.</span>
+
+<span class="sd">    ## Transaction Reference:</span>
+<span class="sd">    Transaction Reference used to initiate a transfer must be unique per transfer. Kindly ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don&#39;t append it.</span>
+
+<span class="sd">    ## For instance:</span>
+<span class="sd">    If my Squad Merchant ID is SBABCKDY and i want to create a transaction ref for my transfer, then I will have something like:</span>
+<span class="sd">        - &quot;transaction_reference&quot;:&quot;SBABCKDY_12345&quot;.</span>
+
+<span class="sd">    ## Parameters</span>
+
+<span class="sd">    ## Required:</span>
+<span class="sd">            - `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer. Please ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don&#39;t append it.</span>
+<span class="sd">            - `amount` (str): Amount to be transferred. Value is in Kobo.</span>
+<span class="sd">            - `bank_code`(str): Unique NIP Code that identifies a bank.</span>
+<span class="sd">            - `account_number` (str): 10-digit NUBAN account number to be transferred to. Must be an account that has been looked up and vetted to be transferred to.</span>
+<span class="sd">            - `account_name` (str): The account name tied to the account number you are transferring to which you have looked up using our look up API.</span>
+<span class="sd">            - `currency_id`  (str): Takes only the value &quot;NGN&quot;.</span>
+<span class="sd">            - `remark` (str): A unique remark that will be sent with the transfer.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;/payout/transfer&quot;</span><span class="p">,</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">transfer_data</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.transfer.SquadTransfer.get_all_transfer" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_all_transfer</span><span class="p">(</span><span class="n">filter_data</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <h5 id="squad.transfer.SquadTransfer.get_all_transfer--get-all-transfers">Get All Transfers</h5>
+<p>This API Allows you retrieve the details of all transfers you have done from your Squad Wallet using this transfer solution.</p>
+<p>Parameters
+ - <code>filter_data</code> (dict): A dictionary containing filter information.
+    Optional:
+        - <code>page</code> (int): Page Number to Display.
+        - <code>perPage</code> (int): Number of records per Page.
+        - <code>dir</code> (str): Allows you sort the records in either ascending or descending order. It takes the value "ASC" or "DESC"</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/transfer/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">get_all_transfer</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ## Get All Transfers</span>
+<span class="sd">    This API Allows you retrieve the details of all transfers you have done from your Squad Wallet using this transfer solution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">     - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">        Optional:</span>
+<span class="sd">            - `page` (int): Page Number to Display.</span>
+<span class="sd">            - `perPage` (int): Number of records per Page.</span>
+<span class="sd">            - `dir` (str): Allows you sort the records in either ascending or descending order. It takes the value &quot;ASC&quot; or &quot;DESC&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/payout/list&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.transfer.SquadTransfer.re_query" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">re_query</span><span class="p">(</span><span class="n">transaction_reference</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <h5 id="squad.transfer.SquadTransfer.re_query--re-query-transfer">Re-query Transfer</h5>
+<p>This API allows you re-query the status of a transfer made to know if it was successful, failed, reversed or pending.</p>
+<p>Parameters</p>
+<h5 id="squad.transfer.SquadTransfer.re_query--required">Required:</h5>
+<pre><code>    - `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer. Please ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don't append it.
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/transfer/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">re_query</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transaction_reference</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ## Re-query Transfer</span>
+<span class="sd">    This API allows you re-query the status of a transfer made to know if it was successful, failed, reversed or pending.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ## Required:</span>
+<span class="sd">            - `transaction_reference` (str): Unique Transaction Reference used to initiate a transfer. Please ensure that you append your merchant ID to the transaction Reference you are creating. This is compulsory as it will throw an error if you don&#39;t append it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;/payout/requery&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;post&quot;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;transaction_reference&quot;</span><span class="p">:</span> <span class="n">transaction_reference</span><span class="p">},</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

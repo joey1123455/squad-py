@@ -1,0 +1,2478 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../merchants/">
+      
+      
+        <link rel="next" href="../wallet/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Virtual Account Module - Squad-py Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#virtual-account-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Squad-py Documentation" class="md-header__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Squad-py Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Virtual Account Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Squad-py Documentation" class="md-nav__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Squad-py Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <center>SQUAD-PY<center/>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchant Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.virtual_accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      virtual_accounts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.virtual_accounts--virtualaccounts-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualAccounts Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualAccounts Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts--methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts--attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualAccounts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualAccounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.create_business_virtual_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_business_virtual_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.create_customer_virtual_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_customer_virtual_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.delete_webhook_error_logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete_webhook_error_logs()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="delete_webhook_error_logs()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.delete_webhook_error_logs--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.get_customer_by_virtual_account_number" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_customer_by_virtual_account_number()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.get_customer_using_customer_identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_customer_using_customer_identifier()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.get_webhook_error_logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_webhook_error_logs()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_all_merchant_virtual_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_all_merchant_virtual_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_customer_transaction_by_customer_identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_customer_transaction_by_customer_identifier()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="query_customer_transaction_by_customer_identifier()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_customer_transaction_by_customer_identifier--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_merchant_transaction_with_filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_merchant_transaction_with_filters()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_merchant_transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_merchant_transactions()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.simulate_payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      simulate_payment()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.update_beneficiary_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_beneficiary_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.update_customer_bvn" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_customer_bvn()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value_added/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value Added Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad.virtual_accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      virtual_accounts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.virtual_accounts--virtualaccounts-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualAccounts Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualAccounts Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts--methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts--attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualAccounts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualAccounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.create_business_virtual_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_business_virtual_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.create_customer_virtual_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_customer_virtual_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.delete_webhook_error_logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete_webhook_error_logs()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="delete_webhook_error_logs()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.delete_webhook_error_logs--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.get_customer_by_virtual_account_number" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_customer_by_virtual_account_number()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.get_customer_using_customer_identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_customer_using_customer_identifier()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.get_webhook_error_logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_webhook_error_logs()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_all_merchant_virtual_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_all_merchant_virtual_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_customer_transaction_by_customer_identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_customer_transaction_by_customer_identifier()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="query_customer_transaction_by_customer_identifier()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_customer_transaction_by_customer_identifier--required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_merchant_transaction_with_filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_merchant_transaction_with_filters()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.query_merchant_transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      query_merchant_transactions()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.simulate_payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      simulate_payment()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.update_beneficiary_account" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_beneficiary_account()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad.virtual_accounts.VirtualAccounts.update_customer_bvn" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_customer_bvn()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="virtual-account-module">Virtual Account Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="squad.virtual_accounts"></a>
+  <div class="doc doc-contents first">
+  
+      <h2 id="squad.virtual_accounts--virtualaccounts-module">VirtualAccounts Module</h2>
+<p>Subclass of SquadClient representing the Squad Virtual Accounts API.</p>
+<p>Squad Virtual Accounts API allows you to create and reserve bank account numbers for receiving payments from your customers.
+Please note that there is a new compliance rule put in place to mitigate against fraud. As a result, all virtual accounts must carry a slug as a prefix to the name.
+The slug must be a portion of your business name or abbreviations of your business name as one word. Please note that slash (/) is not allowed and only hyphen can be used.
+Please be informed that all accounts without the prefix will be flagged by our compliance and fraud team and might ultimately be closed.</p>
+<h3 id="squad.virtual_accounts--methods">Methods</h3>
+<p>create_customer_virtual_account(customer_data: dict) -&gt; JSONDict:</p>
+<pre><code>Creating Virtual Accounts for Customers.
+
+Parameters:
+- `customer_data` (dict): A dictionary containing customer information.
+    Required fields:
+        - `first_name` (str): customer first name.
+        - `last_name` (integer): customer last name.
+        - `middle_name` (str): customer middle name.
+        - `mobile_num` (str): 08012345678 (doesn't take more than 11 digits).
+        - `dob` (date): mm/dd/yyyy.
+        - `email` (str): customer email.
+        - `bvn` (str): BNV is compulsory.
+        - `gender` (str): "1" - Male, "2" -Female.
+        - `address` (str): customer address.
+        - `customer_identifier` (str): unique customer identifier as given by the merchant.
+    Optional fields:
+        - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant 
+          where money sent to this Virtual account is paid into. 
+          Please note that when the beneficiary account is not provided, money paid into this virtual account go into your wallet 
+          and will be paid out/settled in T+1 settlement time.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+customer_data = {
+    "first_name": "John",
+    "last_name": "Doe",
+    "middle_name": "M",
+    "mobile_num": "08012345678",
+    "dob": "01/01/1990",
+    "email": "john.doe@example.com",
+    "bvn": "12345678901",
+    "gender": "1",
+    "address": "123 Main Street",
+    "customer_identifier": "ABC123",
+    "beneficiary_account": "1234567890"
+}
+response = VirtualAccounts.create_customer_virtual_account(customer_data)
+print(response)
+```
+</code></pre>
+<p>create_business_virtual_account(business_data: dict) -&gt; JSONDict:</p>
+<pre><code>Creating Virtual Accounts for Business.
+
+Parameters:
+- `business_data` (dict): A dictionary containing customer information.
+    Required fields:
+        - `bvn` (str): Bank Verification Number.
+        - `business_name` (str): Name of Business/Customer.
+        - `customer_identifier` (str): An alphanumeric string used to identify a customer/business in your system 
+          which will be tied to the virtual account being created.
+        - `mobile_num` (str): 08012345678 (doesn't take more than 11 digits).
+    Optional fields:
+        - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant 
+          where money sent to this Virtual account is paid into. 
+          Please note that when the beneficiary account is not provided, money paid into this virtual account go into your wallet 
+          and will be paid out/settled in T+1 settlement time.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+business_data = {
+    "bvn": "12345678901",
+    "business_name": "ABC Corporation",
+    "customer_identifier": "ABC123",
+    "mobile_num": "08012345678",
+    "beneficiary_account": "1234567890"
+}
+response = VirtualAccounts.create_business_virtual_account(business_data)
+print(response)
+```
+</code></pre>
+<p>query_merchant_transactions() -&gt; JSONDict:</p>
+<pre><code>Query All Merchant's Transactions.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+response = VirtualAccounts.query_merchant_transactions()
+print(response)
+```
+</code></pre>
+<p>query_merchant_transaction_with_filters(filter_data: dict = {}) -&gt; JSONDict:</p>
+<pre><code>Query All Merchant Transactions with Multiple Filters.
+
+Parameters:
+- `filter_data` (dict): A dictionary containing filter information.
+    Optional:
+        - `page` (int): Page Number to Display.
+        - `perPage` (int): Number of records per Page.
+        - `virtualAccount` (int): a unique 10-digit virtual account number.
+        - `customerIdentifier` (str): Unique Identifier used to create/identify a customer's virtual account.
+        - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+        - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+        - `transactionReference` (str): Unique Identifier of a transaction.
+        - `session_id` (str): Unique ID that identifies all NIP transactions.
+        - `dir` (str): Takes two possible values: "DESC" and "ASC". "DESC" - descending order "ASC" - ascending order.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+filter_data = {"page": 1, "perPage": 10, "dir": "ASC"}
+response = VirtualAccounts.query_merchant_transaction_with_filters(filter_data)
+print(response)
+```
+</code></pre>
+<p>get_customer_by_virtual_account_number(virtual_account_number: str) -&gt; JSONDict:</p>
+<pre><code>Get Customer Details by Virtual Account Number.
+
+Parameters:
+- `virtual_account_number` (str): The Virtual Account Number.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+virtual_account_number = "1234567890"
+response = VirtualAccounts.get_customer_by_virtual_account_number(virtual_account_number)
+print(response)
+```
+</code></pre>
+<p>get_customer_using_customer_identifier(customer_identifier: str) -&gt; JSONDict:</p>
+<pre><code>Get Customer Details Using Customer Identifier.
+
+Parameters:
+- `customer_identifier` (str): The Customer Identifier.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+customer_identifier = "ABC123"
+response = VirtualAccounts.get_customer_using_customer_identifier(customer_identifier)
+print(response)
+```
+</code></pre>
+<p>update_customer_bvn(customer_data: dict = {}) -&gt; JSONDict:</p>
+<pre><code>Update Customer's BVN and Unfreeze Transaction.
+
+Parameters:
+- `customer_data` (dict): A dictionary containing customer information.
+    Optional:
+        - `customer_bvn` (str): Bank Verification Number of Customer.
+        - `customer_identifier` (str): Unique number given to the customer by the merchant.
+        - `phone
+</code></pre>
+<p>_number` (str): customer's phone number.</p>
+<pre><code>Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+customer_data = {"customer_bvn": "12345678901", "customer_identifier": "ABC123", "phone_number": "08012345678"}
+response = VirtualAccounts.update_customer_bvn(customer_data)
+print(response)
+```
+</code></pre>
+<p>query_all_merchant_virtual_account(filter_data: dict = {}) -&gt; JSONDict:</p>
+<pre><code>Query All Merchant's Virtual Accounts.
+
+Parameters:
+- `filter_data` (dict): A dictionary containing filter information.
+    Optional:
+        - `page` (int): Page Number to Display.
+        - `perPage` (int): Number of records per Page.
+        - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+        - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+filter_data = {"page": 1, "perPage": 10, "startDate": "09-19-2022", "endDate": "09-19-2022"}
+response = VirtualAccounts.query_all_merchant_virtual_account(filter_data)
+print(response)
+```
+</code></pre>
+<p>update_beneficiary_account(beneficiary_data: dict) -&gt; JSONDict:</p>
+<pre><code>Update Beneficiary Account.
+
+Parameters:
+- `beneficiary_data` (dict): A dictionary containing beneficiary information.
+    Required:
+        - `beneficiary_account` (str): 10 digit valid NUBAN account number.
+        - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+beneficiary_data = {"beneficiary_account": "1234567890", "virtual_account_number": "1234567890"}
+response = VirtualAccounts.update_beneficiary_account(beneficiary_data)
+print(response)
+```
+</code></pre>
+<p>simulate_payment(payment_data: dict) -&gt; JSONDict:</p>
+<pre><code>Simulate Payment.
+
+Parameters:
+- `payment_data` (dict): A dictionary containing beneficiary information.
+    Required:
+        - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.
+    Optional:
+        - `amount` (str): Simulated Amount.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+payment_data = {"virtual_account_number": "1234567890", "amount": "50000"}
+response = VirtualAccounts.simulate_payment(payment_data)
+print(response)
+```
+</code></pre>
+<p>get_webhook_error_logs(filter_data: dict = {}) -&gt; JSONDict:</p>
+<pre><code>Get Webhook Error Log.
+
+Parameters:
+- `filter_data` (dict): A dictionary containing filter information.
+    Optional:
+        - `page` (int): Page Number to Display.
+        - `perPage` (int): Number of records per Page.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+filter_data = {"page": 1, "perPage": 10}
+response = VirtualAccounts.get_webhook_error_logs(filter_data)
+print(response)
+```
+</code></pre>
+<p>delete_webhook_error_logs(transaction_ref: str) -&gt; JSONDict:</p>
+<pre><code>Delete Webhook Error Log.
+
+Parameters:
+- `transaction_ref` (str): Unique Transaction Ref that identifies each virtual account 
+  and is obtained from the retrieved webhook error log.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+transaction_ref = "ABC123"
+response = VirtualAccounts.delete_webhook_error_logs(transaction_ref)
+print(response)
+```
+</code></pre>
+<p>query_customer_transaction_by_customer_identifier(customer_identifier: str) -&gt; JSONDict:</p>
+<pre><code>Query Customer Transaction by Customer Identifier.
+
+Parameters:
+- `customer_identifier` (str): Unique Customer Identifier that identifies each virtual account.
+
+Returns:
+- JSONDict: The response data from the Squad API.
+
+Example:
+```python
+customer_identifier = "ABC123"
+response = VirtualAccounts.query_customer_transaction_by_customer_identifier(customer_identifier)
+print(response)
+```
+</code></pre>
+<h3 id="squad.virtual_accounts--attributes">Attributes</h3>
+<p>Inherited from SquadClient.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="squad.virtual_accounts.VirtualAccounts" class="doc doc-heading">
+          <code>VirtualAccounts</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="squad._squad.SquadClient">SquadClient</span></code></p>
+
+  
+      <p>Squad Virtual Accounts API allows you to create and reserve bank account numbers for receiving payments from your customers.</p>
+<p>Please note that there is a new compliance rule put in place to mitigate against fraud. As a result, all virtual accounts must carry a slug as a prefix to the name.
+The slug must be a portion of your business name or abbreviations of your business name as one word. Please note that slash (/) is not allowed and only hyphen can be used.</p>
+<p>Please be informed that all accounts without the prefix will be flagged by our compliance and fraud team and might ultimately be closed.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span>
+<span class="normal">522</span>
+<span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">VirtualAccounts</span><span class="p">(</span><span class="n">SquadClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Squad Virtual Accounts API allows you to create and reserve bank account numbers for receiving payments from your customers.\n</span>
+<span class="sd">    Please note that there is a new compliance rule put in place to mitigate against fraud. As a result, all virtual accounts must carry a slug as a prefix to the name.\n The slug must be a portion of your business name or abbreviations of your business name as one word. Please note that slash (/) is not allowed and only hyphen can be used.\n</span>
+<span class="sd">    Please be informed that all accounts without the prefix will be flagged by our compliance and fraud team and might ultimately be closed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_customer_virtual_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">customer_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Creating Virtual Accounts for Customers</span>
+<span class="sd">         Parameters:</span>
+<span class="sd">          - `customer_data` (dict): A dictionary containing customer information.</span>
+<span class="sd">              Required fields:</span>
+<span class="sd">                - `first_name` (str): customer first name.</span>
+<span class="sd">                - `last_name` (integer): customer last name.</span>
+<span class="sd">                - `middle_name` (str): customer middle name.</span>
+<span class="sd">                - `mobile_num` (str): 08012345678 (doesn&#39;t take more than 11 digits).</span>
+<span class="sd">                - `dob` (date): mm/dd/yyyy.</span>
+<span class="sd">                - `email` (str): customer email.</span>
+<span class="sd">                - `bvn` (str): BNV is compulsory.</span>
+<span class="sd">                - `gender` (str): &quot;1&quot; - Male, &quot;2&quot; -Female.</span>
+<span class="sd">                - `address` (str): customer address.</span>
+<span class="sd">                - `customer_identifier` (str): unique customer identifier as given by merchant.</span>
+
+<span class="sd">            Optional fields:</span>
+<span class="sd">                - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant where money sent to this Virtual account is paid into. Please note that when beneficiary account is not provided, money paid into this virtual account go into your wallet and will be paid out/settled in T+1 settlement time..</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        - JSONDict: The response data from the Squad API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">customer_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_business_virtual_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">business_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Creating Virtual Accounts for Business</span>
+<span class="sd">         Parameters:</span>
+<span class="sd">          - `business_data` (dict): A dictionary containing customer information.</span>
+<span class="sd">              Required fields:</span>
+<span class="sd">                - `bvn` (str): Bank Verification Number.</span>
+<span class="sd">                - `business_name` (str): Name of Business/Customer.</span>
+<span class="sd">                - `customer_identifier` (str): An alphanumeric string used to identify a customer/business in your system which will be tied to the virtual account being created.</span>
+<span class="sd">                - `mobile_num` (str): 08012345678 (doesn&#39;t take more than 11 digits).</span>
+
+<span class="sd">            Optional fields:</span>
+<span class="sd">                - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant where money sent to this Virtual account is paid into. Please note that when beneficiary account is not provided, money paid into this virtual account go into your wallet and will be paid out/settled in T+1 settlement time..</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        - JSONDict: The response data from the Squad API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account/business&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">business_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query_merchant_transactions</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">      </span><span class="sd">&quot;&quot;&quot; Query All Merchant&#39;s Transactions.\n</span>
+<span class="sd">          This is an endpoint to query all the merchant transactions over a period of time.</span>
+
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            - None</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">                - JSONDict: The response data from the Squad API.</span>
+<span class="sd">      &quot;&quot;&quot;</span>
+      <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/merchant/transactions&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query_merchant_transaction_with_filters</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">filter_data</span><span class="p">:</span><span class="nb">dict</span> <span class="o">=</span><span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Query All Merchant Transactions with Multiple Filters.\n</span>
+<span class="sd">        This endpoint allows you query all transactions and filter using multiple parameters like virtual account number, start and end dates, customer Identifier etc</span>
+
+
+<span class="sd">        Parameters</span>
+<span class="sd">         - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">              Optional:</span>
+<span class="sd">                - `page` (int): Page Number to Display.</span>
+<span class="sd">                - `perPage` (int): Number of records per Page.</span>
+<span class="sd">                - `virtualAccount` (int): a unique 10-digit virtual account number.</span>
+<span class="sd">                - `customerIdentifier` (str): Unique Identifier used to create/identify a customer&#39;s virtual account.</span>
+<span class="sd">                - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">                - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">                - `transactionReference` (str): Unique Identifier of a transaction.</span>
+<span class="sd">                - `session_id` (str): Unique ID that identifies all NIP transactions.</span>
+<span class="sd">                - `dir` (str): Takes two possible values: &quot;DESC&quot; and &quot;ASC&quot;. &quot;DESC&quot; - descending order &quot;ASC&quot; - ascending order.</span>
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/merchant/transactions/all&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_customer_by_virtual_account_number</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">virtual_account_number</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Customer Details by Virtual Account Number\n</span>
+<span class="sd">        This is an endpoint to retrieve the details of a customer using the Virtual Account Number</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/customer/</span><span class="si">{</span><span class="n">virtual_account_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_customer_using_customer_identifier</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">customer_identifier</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Customer Details Using Customer Identifier\n</span>
+<span class="sd">        This is an endpoint to retrieve the details of a customer&#39;s virtual account using the Customer Identifier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/</span><span class="si">{</span><span class="n">customer_identifier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_customer_bvn</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">customer_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span><span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update Customer&#39;s BVN and Unfreeze Transaction</span>
+
+
+<span class="sd">        Parameters</span>
+<span class="sd">         - `customer_data` (dict): A dictionary containing customer  information.</span>
+<span class="sd">              Optional:</span>
+<span class="sd">                - `customer_bvn` (str): Bank Verification Number of Customer.</span>
+<span class="sd">                - `customer_identifier` (str): Unique number given to customer by merchant.</span>
+<span class="sd">                - `phone_number` (str): customer&#39;s phone number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/update/bvn&quot;</span><span class="p">,</span><span class="s2">&quot;patch&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">customer_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query_all_merchant_virtual_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Query All Merchant&#39;s Virtual Accounts.\n</span>
+<span class="sd">            This is an endpoint to look-up the virtual account numbers related to a merchant.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">         - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">              Optional:</span>
+<span class="sd">                - `page` (int): Page Number to Display.</span>
+<span class="sd">                - `perPage` (int): Number of records per Page.</span>
+<span class="sd">                - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">                - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/merchant/accounts&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">update_beneficiary_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">beneficiary_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update Beneficiary Account</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">            - `beneficiary_data` (dict): A dictionary containing beneficiary information.</span>
+<span class="sd">                ## Required:</span>
+<span class="sd">                    - `beneficiary_account` (str): 10 digit valid NUBAN account number.</span>
+<span class="sd">                    - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account/update/beneficiary/account&quot;</span><span class="p">,</span><span class="s2">&quot;patch&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">beneficiary_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">simulate_payment</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Simulate Payment.\n</span>
+<span class="sd">        This is an endpoint to simulate payments </span>
+
+
+<span class="sd">        Parameters</span>
+<span class="sd">            - `payment_data` (dict): A dictionary containing beneficiary information.</span>
+<span class="sd">                ## Required:</span>
+<span class="sd">                    - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.</span>
+<span class="sd">                   Optional:</span>
+<span class="sd">                    - `amount` (str): Simulated Amount.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account/simulate/payment&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_webhook_error_logs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_data</span><span class="p">:</span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Get Webhook Error Log</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">         - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">              Optional:</span>
+<span class="sd">                - `page` (int): Page Number to Display.</span>
+<span class="sd">                - `perPage` (int): Number of records per Page.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/webhook/logs&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">delete_webhook_error_logs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transaction_ref</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Delete Webhook Error Log</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ## Required:</span>
+<span class="sd">            - `transaction_ref` (str): Unique Transaction Ref that identifies each virtual account and gotten from the retrieved webhook error log.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/webhook/logs/</span><span class="si">{</span><span class="n">transaction_ref</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;delete&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query_customer_transaction_by_customer_identifier</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">customer_identifier</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Query Customer Transaction by Customer Identifier.\n</span>
+<span class="sd">        This is an endpoint to query the transactions a customer has made. This is done using the customer&#39;s identifier which was passed when creating the virtual account.</span>
+
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ## Required:</span>
+<span class="sd">            - `customer_identifier` (str):  Unique Customer Identifier that identifies each virtual account</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/customer/transactions/</span><span class="si">{</span><span class="n">customer_identifier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.create_business_virtual_account" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">create_business_virtual_account</span><span class="p">(</span><span class="n">business_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <pre><code>Creating Virtual Accounts for Business
+</code></pre>
+<p>Parameters:
+  - <code>business_data</code> (dict): A dictionary containing customer information.
+      Required fields:
+        - <code>bvn</code> (str): Bank Verification Number.
+        - <code>business_name</code> (str): Name of Business/Customer.
+        - <code>customer_identifier</code> (str): An alphanumeric string used to identify a customer/business in your system which will be tied to the virtual account being created.
+        - <code>mobile_num</code> (str): 08012345678 (doesn't take more than 11 digits).</p>
+<pre><code>Optional fields:
+    - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant where money sent to this Virtual account is paid into. Please note that when beneficiary account is not provided, money paid into this virtual account go into your wallet and will be paid out/settled in T+1 settlement time..
+</code></pre>
+<p>Returns:
+- JSONDict: The response data from the Squad API.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">create_business_virtual_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">business_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creating Virtual Accounts for Business</span>
+<span class="sd">     Parameters:</span>
+<span class="sd">      - `business_data` (dict): A dictionary containing customer information.</span>
+<span class="sd">          Required fields:</span>
+<span class="sd">            - `bvn` (str): Bank Verification Number.</span>
+<span class="sd">            - `business_name` (str): Name of Business/Customer.</span>
+<span class="sd">            - `customer_identifier` (str): An alphanumeric string used to identify a customer/business in your system which will be tied to the virtual account being created.</span>
+<span class="sd">            - `mobile_num` (str): 08012345678 (doesn&#39;t take more than 11 digits).</span>
+
+<span class="sd">        Optional fields:</span>
+<span class="sd">            - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant where money sent to this Virtual account is paid into. Please note that when beneficiary account is not provided, money paid into this virtual account go into your wallet and will be paid out/settled in T+1 settlement time..</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - JSONDict: The response data from the Squad API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account/business&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">business_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.create_customer_virtual_account" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">create_customer_virtual_account</span><span class="p">(</span><span class="n">customer_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <pre><code>Creating Virtual Accounts for Customers
+</code></pre>
+<p>Parameters:
+  - <code>customer_data</code> (dict): A dictionary containing customer information.
+      Required fields:
+        - <code>first_name</code> (str): customer first name.
+        - <code>last_name</code> (integer): customer last name.
+        - <code>middle_name</code> (str): customer middle name.
+        - <code>mobile_num</code> (str): 08012345678 (doesn't take more than 11 digits).
+        - <code>dob</code> (date): mm/dd/yyyy.
+        - <code>email</code> (str): customer email.
+        - <code>bvn</code> (str): BNV is compulsory.
+        - <code>gender</code> (str): "1" - Male, "2" -Female.
+        - <code>address</code> (str): customer address.
+        - <code>customer_identifier</code> (str): unique customer identifier as given by merchant.</p>
+<pre><code>Optional fields:
+    - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant where money sent to this Virtual account is paid into. Please note that when beneficiary account is not provided, money paid into this virtual account go into your wallet and will be paid out/settled in T+1 settlement time..
+</code></pre>
+<p>Returns:
+- JSONDict: The response data from the Squad API.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">create_customer_virtual_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">customer_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creating Virtual Accounts for Customers</span>
+<span class="sd">     Parameters:</span>
+<span class="sd">      - `customer_data` (dict): A dictionary containing customer information.</span>
+<span class="sd">          Required fields:</span>
+<span class="sd">            - `first_name` (str): customer first name.</span>
+<span class="sd">            - `last_name` (integer): customer last name.</span>
+<span class="sd">            - `middle_name` (str): customer middle name.</span>
+<span class="sd">            - `mobile_num` (str): 08012345678 (doesn&#39;t take more than 11 digits).</span>
+<span class="sd">            - `dob` (date): mm/dd/yyyy.</span>
+<span class="sd">            - `email` (str): customer email.</span>
+<span class="sd">            - `bvn` (str): BNV is compulsory.</span>
+<span class="sd">            - `gender` (str): &quot;1&quot; - Male, &quot;2&quot; -Female.</span>
+<span class="sd">            - `address` (str): customer address.</span>
+<span class="sd">            - `customer_identifier` (str): unique customer identifier as given by merchant.</span>
+
+<span class="sd">        Optional fields:</span>
+<span class="sd">            - `beneficiary_account` (str): Beneficiary Account is the 10 Digit Bank Account Number (GTBank) provided by the Merchant where money sent to this Virtual account is paid into. Please note that when beneficiary account is not provided, money paid into this virtual account go into your wallet and will be paid out/settled in T+1 settlement time..</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - JSONDict: The response data from the Squad API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">customer_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.delete_webhook_error_logs" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">delete_webhook_error_logs</span><span class="p">(</span><span class="n">transaction_ref</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Delete Webhook Error Log</p>
+<p>Parameters</p>
+<h5 id="squad.virtual_accounts.VirtualAccounts.delete_webhook_error_logs--required">Required:</h5>
+<pre><code>- `transaction_ref` (str): Unique Transaction Ref that identifies each virtual account and gotten from the retrieved webhook error log.
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">delete_webhook_error_logs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">transaction_ref</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Delete Webhook Error Log</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ## Required:</span>
+<span class="sd">        - `transaction_ref` (str): Unique Transaction Ref that identifies each virtual account and gotten from the retrieved webhook error log.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/webhook/logs/</span><span class="si">{</span><span class="n">transaction_ref</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;delete&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.get_customer_by_virtual_account_number" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_customer_by_virtual_account_number</span><span class="p">(</span><span class="n">virtual_account_number</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get Customer Details by Virtual Account Number</p>
+<p>This is an endpoint to retrieve the details of a customer using the Virtual Account Number</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">get_customer_by_virtual_account_number</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">virtual_account_number</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get Customer Details by Virtual Account Number\n</span>
+<span class="sd">    This is an endpoint to retrieve the details of a customer using the Virtual Account Number</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/customer/</span><span class="si">{</span><span class="n">virtual_account_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.get_customer_using_customer_identifier" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_customer_using_customer_identifier</span><span class="p">(</span><span class="n">customer_identifier</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get Customer Details Using Customer Identifier</p>
+<p>This is an endpoint to retrieve the details of a customer's virtual account using the Customer Identifier</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">get_customer_using_customer_identifier</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">customer_identifier</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get Customer Details Using Customer Identifier\n</span>
+<span class="sd">    This is an endpoint to retrieve the details of a customer&#39;s virtual account using the Customer Identifier</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/</span><span class="si">{</span><span class="n">customer_identifier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.get_webhook_error_logs" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_webhook_error_logs</span><span class="p">(</span><span class="n">filter_data</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get Webhook Error Log</p>
+<p>Parameters
+ - <code>filter_data</code> (dict): A dictionary containing filter information.
+      Optional:
+        - <code>page</code> (int): Page Number to Display.
+        - <code>perPage</code> (int): Number of records per Page.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">get_webhook_error_logs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_data</span><span class="p">:</span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Get Webhook Error Log</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">     - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">          Optional:</span>
+<span class="sd">            - `page` (int): Page Number to Display.</span>
+<span class="sd">            - `perPage` (int): Number of records per Page.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/webhook/logs&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.query_all_merchant_virtual_account" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">query_all_merchant_virtual_account</span><span class="p">(</span><span class="n">filter_data</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Query All Merchant's Virtual Accounts.</p>
+<pre><code>This is an endpoint to look-up the virtual account numbers related to a merchant.
+</code></pre>
+<p>Parameters
+ - <code>filter_data</code> (dict): A dictionary containing filter information.
+      Optional:
+        - <code>page</code> (int): Page Number to Display.
+        - <code>perPage</code> (int): Number of records per Page.
+        - <code>startDate</code> (date): MM-DD-YYYY E.G: 09-19-2022.
+        - <code>endDate</code> (date): MM-DD-YYYY E.G: 09-19-2022.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">query_all_merchant_virtual_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filter_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Query All Merchant&#39;s Virtual Accounts.\n</span>
+<span class="sd">        This is an endpoint to look-up the virtual account numbers related to a merchant.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">     - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">          Optional:</span>
+<span class="sd">            - `page` (int): Page Number to Display.</span>
+<span class="sd">            - `perPage` (int): Number of records per Page.</span>
+<span class="sd">            - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">            - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/merchant/accounts&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.query_customer_transaction_by_customer_identifier" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">query_customer_transaction_by_customer_identifier</span><span class="p">(</span><span class="n">customer_identifier</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Query Customer Transaction by Customer Identifier.</p>
+<p>This is an endpoint to query the transactions a customer has made. This is done using the customer's identifier which was passed when creating the virtual account.</p>
+<p>Parameters</p>
+<h5 id="squad.virtual_accounts.VirtualAccounts.query_customer_transaction_by_customer_identifier--required">Required:</h5>
+<pre><code>- `customer_identifier` (str):  Unique Customer Identifier that identifies each virtual account
+</code></pre>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">521</span>
+<span class="normal">522</span>
+<span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">query_customer_transaction_by_customer_identifier</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">customer_identifier</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Query Customer Transaction by Customer Identifier.\n</span>
+<span class="sd">    This is an endpoint to query the transactions a customer has made. This is done using the customer&#39;s identifier which was passed when creating the virtual account.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ## Required:</span>
+<span class="sd">        - `customer_identifier` (str):  Unique Customer Identifier that identifies each virtual account</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/customer/transactions/</span><span class="si">{</span><span class="n">customer_identifier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.query_merchant_transaction_with_filters" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">query_merchant_transaction_with_filters</span><span class="p">(</span><span class="n">filter_data</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Query All Merchant Transactions with Multiple Filters.</p>
+<p>This endpoint allows you query all transactions and filter using multiple parameters like virtual account number, start and end dates, customer Identifier etc</p>
+<p>Parameters
+ - <code>filter_data</code> (dict): A dictionary containing filter information.
+      Optional:
+        - <code>page</code> (int): Page Number to Display.
+        - <code>perPage</code> (int): Number of records per Page.
+        - <code>virtualAccount</code> (int): a unique 10-digit virtual account number.
+        - <code>customerIdentifier</code> (str): Unique Identifier used to create/identify a customer's virtual account.
+        - <code>startDate</code> (date): MM-DD-YYYY E.G: 09-19-2022.
+        - <code>endDate</code> (date): MM-DD-YYYY E.G: 09-19-2022.
+        - <code>transactionReference</code> (str): Unique Identifier of a transaction.
+        - <code>session_id</code> (str): Unique ID that identifies all NIP transactions.
+        - <code>dir</code> (str): Takes two possible values: "DESC" and "ASC". "DESC" - descending order "ASC" - ascending order.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">query_merchant_transaction_with_filters</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span><span class="n">filter_data</span><span class="p">:</span><span class="nb">dict</span> <span class="o">=</span><span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Query All Merchant Transactions with Multiple Filters.\n</span>
+<span class="sd">    This endpoint allows you query all transactions and filter using multiple parameters like virtual account number, start and end dates, customer Identifier etc</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">     - `filter_data` (dict): A dictionary containing filter information.</span>
+<span class="sd">          Optional:</span>
+<span class="sd">            - `page` (int): Page Number to Display.</span>
+<span class="sd">            - `perPage` (int): Number of records per Page.</span>
+<span class="sd">            - `virtualAccount` (int): a unique 10-digit virtual account number.</span>
+<span class="sd">            - `customerIdentifier` (str): Unique Identifier used to create/identify a customer&#39;s virtual account.</span>
+<span class="sd">            - `startDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">            - `endDate` (date): MM-DD-YYYY E.G: 09-19-2022.</span>
+<span class="sd">            - `transactionReference` (str): Unique Identifier of a transaction.</span>
+<span class="sd">            - `session_id` (str): Unique ID that identifies all NIP transactions.</span>
+<span class="sd">            - `dir` (str): Takes two possible values: &quot;DESC&quot; and &quot;ASC&quot;. &quot;DESC&quot; - descending order &quot;ASC&quot; - ascending order.</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/merchant/transactions/all&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">filter_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.query_merchant_transactions" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">query_merchant_transactions</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Query All Merchant's Transactions.</p>
+<p>This is an endpoint to query all the merchant transactions over a period of time.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <ul>
+<li>JSONDict: The response data from the Squad API.</li>
+</ul>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">query_merchant_transactions</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot; Query All Merchant&#39;s Transactions.\n</span>
+<span class="sd">      This is an endpoint to query all the merchant transactions over a period of time.</span>
+
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        - None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">            - JSONDict: The response data from the Squad API.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/merchant/transactions&quot;</span><span class="p">,</span><span class="s2">&quot;get&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.simulate_payment" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">simulate_payment</span><span class="p">(</span><span class="n">payment_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Simulate Payment.</p>
+<p>This is an endpoint to simulate payments </p>
+<p>Parameters
+    - <code>payment_data</code> (dict): A dictionary containing beneficiary information.
+        ## Required:
+            - <code>virtual_account_number</code> (str): The Virtual account number whose beneficiary account is to be updated.
+           Optional:
+            - <code>amount</code> (str): Simulated Amount.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">simulate_payment</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payment_data</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Simulate Payment.\n</span>
+<span class="sd">    This is an endpoint to simulate payments </span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">        - `payment_data` (dict): A dictionary containing beneficiary information.</span>
+<span class="sd">            ## Required:</span>
+<span class="sd">                - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.</span>
+<span class="sd">               Optional:</span>
+<span class="sd">                - `amount` (str): Simulated Amount.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account/simulate/payment&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payment_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.update_beneficiary_account" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">update_beneficiary_account</span><span class="p">(</span><span class="n">beneficiary_data</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Update Beneficiary Account</p>
+<p>Parameters
+    - <code>beneficiary_data</code> (dict): A dictionary containing beneficiary information.
+        ## Required:
+            - <code>beneficiary_account</code> (str): 10 digit valid NUBAN account number.
+            - <code>virtual_account_number</code> (str): The Virtual account number whose beneficiary account is to be updated.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">update_beneficiary_account</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">beneficiary_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Update Beneficiary Account</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">        - `beneficiary_data` (dict): A dictionary containing beneficiary information.</span>
+<span class="sd">            ## Required:</span>
+<span class="sd">                - `beneficiary_account` (str): 10 digit valid NUBAN account number.</span>
+<span class="sd">                - `virtual_account_number` (str): The Virtual account number whose beneficiary account is to be updated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="s2">&quot;/virtual-account/update/beneficiary/account&quot;</span><span class="p">,</span><span class="s2">&quot;patch&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">beneficiary_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="squad.virtual_accounts.VirtualAccounts.update_customer_bvn" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">update_customer_bvn</span><span class="p">(</span><span class="n">customer_data</span><span class="o">=</span><span class="p">{})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Update Customer's BVN and Unfreeze Transaction</p>
+<p>Parameters
+ - <code>customer_data</code> (dict): A dictionary containing customer  information.
+      Optional:
+        - <code>customer_bvn</code> (str): Bank Verification Number of Customer.
+        - <code>customer_identifier</code> (str): Unique number given to customer by merchant.
+        - <code>phone_number</code> (str): customer's phone number.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>squad/virtual_accounts/__init__.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">update_customer_bvn</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">customer_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span><span class="p">{}):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Update Customer&#39;s BVN and Unfreeze Transaction</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">     - `customer_data` (dict): A dictionary containing customer  information.</span>
+<span class="sd">          Optional:</span>
+<span class="sd">            - `customer_bvn` (str): Bank Verification Number of Customer.</span>
+<span class="sd">            - `customer_identifier` (str): Unique number given to customer by merchant.</span>
+<span class="sd">            - `phone_number` (str): customer&#39;s phone number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/virtual-account/update/bvn&quot;</span><span class="p">,</span><span class="s2">&quot;patch&quot;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">customer_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,926 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../payment/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Squad Module - Squad-py Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#squad-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Squad-py Documentation" class="md-header__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Squad-py Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Squad Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Squad-py Documentation" class="md-nav__button md-logo" aria-label="Squad-py Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Squad-py Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    <center>SQUAD-PY<center/>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Squad Module
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      squad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad--squad-api-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Squad API Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Squad API Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad--package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--global-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Attributes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--global-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Attributes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.Squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Squad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payment Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merchants/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchant Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtual_accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtual Account Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POS Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../value_added/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value Added Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      squad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad--squad-api-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Squad API Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Squad API Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#squad--package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Structure:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--global-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Attributes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--global-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Attributes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squad--example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squad.Squad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Squad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="squad-module">Squad Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="squad"></a>
+  <div class="doc doc-contents first">
+  
+      <h2 id="squad--squad-api-package">Squad API Package</h2>
+<p>Module providing a Python client for interacting with the Squad API, offering functionalities for payment and financial operations.</p>
+<h3 id="squad--package-structure">Package Structure:</h3>
+<ul>
+<li><code>squad._squad</code>: Main module containing the <code>SquadClient</code> class.</li>
+<li><code>squad.utils.exceptions</code>: Module with custom exceptions, including <code>InvalidSecretKey</code>.</li>
+<li><code>squad.payments</code>: Module for payment-related operations, including <code>PaymentTransaction</code>.</li>
+<li><code>squad.merchants</code>: Module for merchant-related operations, including <code>SquadMerchant</code>.</li>
+<li><code>squad.virtual_accounts</code>: Module for virtual account-related operations, including <code>VirtualAccounts</code>.</li>
+<li><code>squad.dispute</code>: Module for dispute-related operations, including <code>Dispute</code>.</li>
+<li><code>squad.wallet</code>: Module for wallet-related operations, including <code>Wallet</code>.</li>
+<li><code>squad.transfer</code>: Module for fund transfer-related operations, including <code>SquadTransfer</code>.</li>
+<li><code>squad.pos</code>: Module for point-of-sale (POS) operations, including <code>SquadPOS</code>.</li>
+<li><code>squad.utils.exceptions</code>: Custom exceptions for Squad API.</li>
+<li><code>squad.utils.types</code>: Type definitions for Squad API.</li>
+<li><code>squad.utils.logging</code>: Logging utilities for Squad API.</li>
+</ul>
+<h3 id="squad--global-attributes">Global Attributes:</h3>
+<ul>
+<li><code>_LOGGER</code>: Logger instance for logging Squad requests.</li>
+</ul>
+<h3 id="squad--classes">Classes:</h3>
+<ol>
+<li>
+<p><code>SquadState</code>: Represents a shared state class for making class attributes global.</p>
+<ul>
+<li>Class Attributes:<ul>
+<li><code>_shared_state</code>: Shared state dictionary for class attributes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>SquadClient(SquadState)</code>: Represents a client for interacting with the Squad API.</p>
+<ul>
+<li>Inherits from <code>SquadState</code>.</li>
+<li>Attributes:<ul>
+<li><code>_shared_state</code>: Shared state dictionary for class attributes.</li>
+</ul>
+</li>
+<li>Methods:<ul>
+<li><code>__init__(self, **kwargs)</code>: Initializes the SquadClient instance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>SquadRequest</code>: Represents the HTTP request handling class for Squad API.</p>
+<ul>
+<li>Attributes:<ul>
+<li><code>_API_BASE_URL</code>: Base URL for Squad API (sandbox or live).</li>
+<li><code>headers</code>: HTTP headers for Squad requests.</li>
+<li><code>request_timeout</code>: Timeout for Squad requests.</li>
+<li><code>session</code>: Requests session for handling HTTP requests.</li>
+</ul>
+</li>
+<li>Methods:<ul>
+<li><code>__init__(self, headers=None, test=True)</code>: Initializes the SquadRequest instance.</li>
+<li><code>_send_request(self, endpoint: str, method="get", **kwargs)</code>: Sends a request to a Squad API endpoint.</li>
+<li><code>_request_wrapper(self, url, method, headers, request_data=None)</code>: Wraps the HTTP request for Squad API.</li>
+<li><code>parse_json_payload(self, payload: bytes) -&gt; JSONDict</code>: Parses JSON payload from the HTTP response.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Squad</code>: Represents the main interface for interacting with the Squad API, inheriting from <code>SquadClient</code>.</p>
+<ul>
+<li>Attributes:<ul>
+<li><code>payments</code>: Provides access to PaymentTransaction operations.</li>
+<li><code>merchants</code>: Provides access to SquadMerchant operations.</li>
+<li><code>virtual_accounts</code>: Provides access to VirtualAccounts operations.</li>
+<li><code>dispute</code>: Provides access to Dispute operations.</li>
+<li><code>wallet</code>: Provides access to Wallet operations.</li>
+<li><code>transfer</code>: Provides access to SquadTransfer operations.</li>
+<li><code>pos</code>: Provides access to SquadPOS operations.</li>
+</ul>
+</li>
+<li>Methods:<ul>
+<li><code>__init__(self, secret_key=None, test=True)</code>: Initializes the Squad instance.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="squad--global-attributes_1">Global Attributes:</h3>
+<ul>
+<li><code>InvalidSecretKey</code>: Custom exception raised when the secret key is invalid.</li>
+</ul>
+<h3 id="squad--example">Example:</h3>
+<pre><code class="language-python"># Create a Squad instance
+squad_instance = Squad(secret_key='your_secret_key')
+
+# Access payment transactions
+payments_result = squad_instance.payments.list_payments()
+
+# Access merchant information
+merchant_info = squad_instance.merchants.get_merchant_info(merchant_id='merchant123')
+</code></pre>
+<p>For more information on API operations, refer to the Squad API documentation.</p>
+<p>Note: Make sure to handle exceptions appropriately, especially the InvalidSecretKey exception.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="squad.Squad" class="doc doc-heading">
+          <code>Squad</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="squad._squad.SquadClient">SquadClient</span></code></p>
+
+  
+      <p>Squad API Client for Payment and Financial Operations.</p>
+<p>This class serves as the main interface for interacting with the Squad API,
+providing functionalities related to payments, merchants, virtual accounts,
+disputes, wallets, transfers, and point of sale (POS) operations.</p>
+<p>Parameters:
+- secret_key (str): The secret key obtained from the Squad Dashboard.
+- test (bool): A flag indicating whether to use the test environment (default is True).</p>
+<p>Raises:
+- InvalidSecretKey: If the <code>secret_key</code> is not provided.</p>
+<p>Attributes:
+- payments (class): Provides access to PaymentTransaction operations.
+- merchants (class): Provides access to SquadMerchant operations.
+- virtual_accounts (class): Provides access to VirtualAccounts operations.
+- dispute (class): Provides access to Dispute operations.
+- wallet (class): Provides access to Wallet operations.
+- transfer (class): Provides access to SquadTransfer operations.
+- pos (class): Provides access to SquadPOS operations.</p>
+<p>Example:</p>
+<pre><code class="language-python"># Create a Squad instance
+squad_instance = Squad(secret_key='your_secret_key')
+
+# Access payment transactions
+payments_result = squad_instance.payments.list_payments()
+
+# Access merchant information
+merchant_info = squad_instance.merchants.get_merchant_info(merchant_id='merchant123')
+</code></pre>
+<p>For more information on API operations, refer to the Squad API documentation.</p>
+<p>Note: Make sure to handle exceptions appropriately, especially the InvalidSecretKey exception.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>squad/__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Squad</span><span class="p">(</span><span class="n">SquadClient</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Squad API Client for Payment and Financial Operations.</span>
+
+<span class="sd">    This class serves as the main interface for interacting with the Squad API,</span>
+<span class="sd">    providing functionalities related to payments, merchants, virtual accounts,</span>
+<span class="sd">    disputes, wallets, transfers, and point of sale (POS) operations.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - secret_key (str): The secret key obtained from the Squad Dashboard.</span>
+<span class="sd">    - test (bool): A flag indicating whether to use the test environment (default is True).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">    - InvalidSecretKey: If the `secret_key` is not provided.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    - payments (class): Provides access to PaymentTransaction operations.</span>
+<span class="sd">    - merchants (class): Provides access to SquadMerchant operations.</span>
+<span class="sd">    - virtual_accounts (class): Provides access to VirtualAccounts operations.</span>
+<span class="sd">    - dispute (class): Provides access to Dispute operations.</span>
+<span class="sd">    - wallet (class): Provides access to Wallet operations.</span>
+<span class="sd">    - transfer (class): Provides access to SquadTransfer operations.</span>
+<span class="sd">    - pos (class): Provides access to SquadPOS operations.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    ```python</span>
+<span class="sd">    # Create a Squad instance</span>
+<span class="sd">    squad_instance = Squad(secret_key=&#39;your_secret_key&#39;)</span>
+
+<span class="sd">    # Access payment transactions</span>
+<span class="sd">    payments_result = squad_instance.payments.list_payments()</span>
+
+<span class="sd">    # Access merchant information</span>
+<span class="sd">    merchant_info = squad_instance.merchants.get_merchant_info(merchant_id=&#39;merchant123&#39;)</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    For more information on API operations, refer to the Squad API documentation.</span>
+
+<span class="sd">    Note: Make sure to handle exceptions appropriately, especially the InvalidSecretKey exception.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+         <span class="k">if</span> <span class="ow">not</span> <span class="n">secret_key</span><span class="p">:</span>
+              <span class="k">raise</span> <span class="n">InvalidSecretKey</span><span class="p">(</span><span class="s2">&quot;you must pass a secret_key from Squad Dashboard&quot;</span><span class="p">)</span>
+         <span class="n">SquadClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="n">secret_key</span><span class="p">,</span><span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">)</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">payments</span> <span class="o">=</span> <span class="n">PaymentTransaction</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">merchants</span> <span class="o">=</span> <span class="n">SquadMerchant</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">virtual_accounts</span> <span class="o">=</span> <span class="n">VirtualAccounts</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">value_added_service</span> <span class="o">=</span> <span class="n">SquadServices_Client</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">dispute</span> <span class="o">=</span> <span class="n">Dispute</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">wallet</span> <span class="o">=</span> <span class="n">Wallet</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">transfer</span> <span class="o">=</span> <span class="n">SquadTransfer</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">SquadPOS</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
