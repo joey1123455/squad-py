@@ -1,2 +1,0 @@
-# POS Module
-::: squad.pos

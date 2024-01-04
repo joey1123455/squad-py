@@ -1,2 +1,0 @@
-# Payment Module
-::: squad.payments
