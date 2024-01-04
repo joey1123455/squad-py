@@ -4,6 +4,8 @@ A Python wrapper for [Squadco API](https://squadinc.gitbook.io/squad-api-documen
 
 The api call descriptions are from the official documentation.
 
+To view the package's detailed docs [squad-py](https://joey1123455.github.io/squad-py/)
+
 
 ## Getting Started
 
