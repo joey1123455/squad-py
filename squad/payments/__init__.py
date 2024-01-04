@@ -99,7 +99,7 @@ class PaymentTransaction(SquadClient):
         This allows you charge a card using the token generated during the initial transaction which was sent via webhook
 
         Parameters:
-          - `payment_data` (dict): A dictionary containing payment information.
+         - `payment_data` (dict): A dictionary containing payment information.
               Required fields:
                 - `amount` (int): Recipient's email address.
                 - `token_id` (str): A unique tokenization code for each card transaction and it is returned via the webhook for first charge on the card.
