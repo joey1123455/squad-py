@@ -1,8 +1,10 @@
 # <center>SQUAD-PY<center/>
 
 This site contains the project documentation for the
-**`squad-py`** project that is a wrapper built over squad api endpoints
+**`squad-py`** project that is a wrapper built over Squad API endpoints,
 a payment gateway facilitated by GTBank.
+
+For more information, refer to 
 [squad docs](
     https://squadinc.gitbook.io/squad-api-documentation/).
 
@@ -12,9 +14,9 @@ pip install squadco
 ```
 
 ### Before you Begin
-1. Create a free Squad account [Here](https://dashboard.squadco.com/sign-up) (for Test, create a [Sandbox Account](https://sandbox.squadco.com/sign-up))
+1. Create a free Squad account [here](https://dashboard.squadco.com/sign-up) (for test, create a [Sandbox Account](https://sandbox.squadco.com/sign-up)).
 2. Integrate Squad payment gateway.
-3. Copy your private key from your Dashboard.
+3. Copy your private key from your dashboard.
 
 
 ### Sample Usage
@@ -42,9 +44,9 @@ merchant_info = squad_instance.merchants.get_merchant_info(merchant_id='merchant
 
 
 Quickly find what you're looking for depending on
-your use case by looking at the different pages.
+your use case by looking through the different pages.
 
 ## Acknowledgements
 
-I want to thank [Uche David](https://github.com/debugtitan) for leading the project and writing most parts of it. Also, I want to thank [Adetunji peter](https://github.com/Grenate22), [Joseph Folayan](https://github.com/joey1123455) and that sweet grass for also contributing.
+I want to thank [Uche David](https://github.com/debugtitan) for leading the project and writing most parts of it. Also, I want to thank [Adetunji Peter](https://github.com/Grenate22), [Joseph Folayan](https://github.com/joey1123455) and that sweet grass for also contributing.
 
